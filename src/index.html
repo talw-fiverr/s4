@@ -27,6 +27,11 @@
     <div class="header-title">קבוצות ספורט</div>
     <p class="header-sub-title">האתר נמצא בבניה ויפתח בקרוב</p>
 
+    <div class="mobile-container">
+      <img src="/images/mobile_images_1.png"/>
+      <img src="/images/mobile_images_2.png"/>
+      <img src="/images/mobile_images_3.png"/>
+    </div>
 
     <!-- <div>This is the progress bar</div>
     <progress value="0" max="100" id="uploader">0%</progress>
@@ -98,10 +103,30 @@
         });
       };
 
-      function addData(groupName, grouptTitle) {
-        firebase.database().ref('groups/' + groupName).set({
-          grouptTitle: grouptTitle
-        }).then(function() {
+      var tempInfo = {
+        groupInfo: {
+          name: 'ספורט אתגרי',
+          title: 'אוהבי ספורט אתגרי',
+          managerName: 'טל וסרמן',
+          address: 'קרית אתא',
+          groupMaxSize: 30,
+          groupCurSize: 10,
+          ageRangeMax: 30,
+          ageRangeMin: 35,
+          sportType: {
+            'ריצה': true,
+            'שחיה': true,
+            'אופנים': true
+          }
+        }
+      }
+      var models = {
+        currentGroup: {},
+        allGroups: {}
+      }
+
+      function addGroup(groupInfo) {
+        firebase.database().ref('groups/' + groupInfo.name).set(groupInfo).then(function() {
           console.log('addData success');
         }, function(error) {
           var errorMessage = error.message;
@@ -149,6 +174,19 @@
 
         return firebase.database().ref().update(updates);
       }
+
+      // read data once and not listen for changes
+      function getGroupInfo(groupName) {
+        firebase.database().ref('groups/' + groupName).once('value').then(function(snapshot) {
+          models.currentGroup = snapshot.val();
+        });
+      };
+
+      function getAllGroupsInfo() {
+        firebase.database().ref('groups').once('value').then(function(snapshot) {
+          models.allGroups = snapshot.val();
+        });
+      };
       // - - - - - - - - //
 
 
