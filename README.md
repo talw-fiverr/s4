@@ -1,25 +1,15 @@
-# ReduxSimpleStarter
+#### Repository author #####
+Tal Waserman
 
-Interested in learning [Redux](https://www.udemy.com/react-redux/)?
 
-###Getting Started###
-
-There are two methods for getting started with this repo.
-
-####Familiar with Git?#####
-Checkout this repo, install dependencies, then start the gulp process with the following:
-
+#### React Commands#####
 ```
-	> git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
-	> cd ReduxSimpleStarter
-	> npm install
-	> npm start
+	> npm install - install all packages required
+	> npm start - start the development server
 ```
 
-####Not Familiar with Git?#####
-Click [here](https://github.com/StephenGrider/ReactStarter/releases) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
+#### Firebase Commands#####
 ```
-	> npm install
-	> npm start
+	> firebase serve - run the code form the public directory (src) in a firebase dev server
+	> firebase deploy - deplot the public folder to the hosting of firebase
 ```
