@@ -1,11 +1,21 @@
+@font-face {
+    font-family: "My Custom Font";
+    src:  url('/fonts/SecularOne-Regular.ttf')  format('truetype'),
+          url('/fonts/SecularOne-Regular.woff')  format('woff');
+}
+
 body {
-  font-family: Roboto, Arial, sans-serif;
+  font-family:  "My Custom Font",Roboto, Arial, sans-serif;
   background: #ECEFF1;
   color: rgba(0,0,0,0.87);
 }
 
 a {
   color: rgb(3,155,229);
+}
+
+.header-title {
+  text-align: center;
 }
 
 #message {
