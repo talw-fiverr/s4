@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "mygroups-9ffdc"
+    "default": "mygroups-9ffdc",
+    "staging": "mygroups-9ffdc",
+    "production": "mygroups-9ffdc"
   }
 }

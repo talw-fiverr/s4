@@ -1,64 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <style rel="stylesheet" href="/style.css"></style>
     <meta charset="utf-8">
     <title>Welcome to Firebase Hosting</title>
-    <style media="screen">
-      body {
-        font-family: Roboto, Arial, sans-serif;
-        background: #ECEFF1;
-        color: rgba(0,0,0,0.87);
-      }
-
-      a {
-        color: rgb(3,155,229);
-      }
-
-      #message {
-        max-width: 400px;
-        margin: 40px auto;
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
-        border-radius: 2px;
-        background: white;
-        padding: 16px 24px;
-      }
-
-      #message h1 {
-        font-size: 22px;
-        font-weight: 500;
-        text-align: center;
-        margin: 0 0 16px;
-      }
-
-      #message p {
-        font-weight: 300;
-        line-height: 150%;
-      }
-
-      #message ul {
-        list-style: none;
-        margin: 16px 0 0;
-        padding: 0;
-        text-align: center;
-      }
-
-      #message li a {
-        display: inline-block;
-        padding: 8px;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 500;
-        background: rgb(3,155,229);
-        color: white;
-        border: 1px solid rgb(3,155,229);
-        border-radius: 3px;
-        font-size: 14px;
-        box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-      }
-    </style>
   </head>
   <body>
-    <h1 id="bigOne"></div>
+    <h1 id="bigOne">
+      tal
+    </div>
     <div id="message">
       <h1>Welcome to Firebase Hosting</h1>
       <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
@@ -66,6 +17,17 @@
         <li><a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a></li>
       </ul>
     </div>
+
+    <h1>
+      This is the progress bar
+    </h1>
+    <progress value="0" max="100" id="uploader">0%</progress>
+    <input type="file" value="upload" id="fileButton" />
+
+    <img src="https://firebasestorage.googleapis.com/v0/b/mygroups-9ffdc.appspot.com/o/users_images%2Fmyimage.jpeg?alt=media&token=77b2c730-a1f6-4add-995d-806c4ff8d647"/>
+
+
+
 
     <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
     <script>
@@ -78,9 +40,245 @@
       };
       firebase.initializeApp(config);
 
-      var bigOne = document.getElementById('bigOne');
-      var dbRef = firebase.database().ref().child('text');
-      dbRef.on('value', snap => bigOne.innerText = snap.val());
+      // var bigOne = document.getElementById('bigOne');
+      // var dbRef = firebase.database().ref().child('text');
+      // dbRef.on('value', snap => bigOne.innerText = snap.val());
+
+      var database = firebase.database();
+      // Progress bar logic
+
+      // Get elements
+      var uploader = document.getElementById('uploader');
+      var fileButton = document.getElementById('fileButton');
+
+      // Listen for file selected
+      fileButton.addEventListener('change', function(e) {
+        // Get the file
+        var file = e.target.files[0];
+
+        // Create a storage ref
+        var storageRef = firebase.storage().ref('users_images/' + file.name);
+
+        //upload the file
+        var task = storageRef.put(file);
+
+        //update the progress bar
+        task.on('state_changed',
+        function progress(snapshot){
+          var precentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          uploader.value = precentage;
+        },
+        function error(err) {
+
+        },
+        function complete() {
+
+        }
+      )
+      });
+
+      // - - - - realTime dataBase - - - - //
+      function setData(userId, name, message) {
+        firebase.database().ref('users/' + userId).set({
+          message: message,
+          name: name
+        }).then(function() {
+          console.log('message saved');
+        }, function(error) {
+          var errorMessage = error.message;
+          alert(errorMessage);
+        });
+      };
+
+      function removeData(groupName) {
+        firebase.database().ref('groups/' + groupName).remove().then(function() {
+          console.log('removeData success');
+        }, function(error) {
+          var errorMessage = error.message;
+          alert(errorMessage);
+        });
+      };
+
+      function addData(groupName, grouptTitle) {
+        firebase.database().ref('groups/' + groupName).set({
+          grouptTitle: grouptTitle
+        }).then(function() {
+          console.log('addData success');
+        }, function(error) {
+          var errorMessage = error.message;
+          alert(errorMessage);
+        });
+      };
+
+      function updateData(groupName, grouptTitle) {
+        // A post entry.
+        var postData = {
+          author: username,
+          uid: uid,
+          body: body,
+          title: title,
+          starCount: 0,
+          authorPic: picture
+        };
+
+        //transactional process
+        function toggleStar(postRef, uid) {
+          postRef.transaction(function(post) {
+            if (post) {
+              if (post.stars && post.stars[uid]) {
+                post.starCount--;
+                post.stars[uid] = null;
+              } else {
+                post.starCount++;
+                if (!post.stars) {
+                  post.stars = {};
+                }
+                post.stars[uid] = true;
+              }
+            }
+            return post;
+          });
+        }
+
+        // Get a key for a new Post. (not needed right now)
+        //var newPostKey = firebase.database().ref().child('posts').push().key;
+
+        // Write the new post's data simultaneously in the posts list and the user's post list.
+        var updates = {};
+        updates['/groups/' + groupName] = grouptTitle;
+        updates['/user-groups/' + uid + '/' + groupName] = grouptTitle;
+
+        return firebase.database().ref().update(updates);
+      }
+      // - - - - - - - - //
+
+
+      // - - - - user manager code - - - - //
+      var currentUser = null;
+
+      function passwordReset(emailAddress) {
+        var auth = firebase.auth();
+
+        auth.sendPasswordResetEmail(emailAddress).then(function() {
+          // Email sent.
+        }, function(error) {
+          // An error happened.
+        });
+
+      };
+
+      function reAuthenticate() {
+        var user = firebase.auth().currentUser;
+        var credential;
+        // Prompt the user to re-provide their sign-in credentials
+        user.reauthenticate(credential).then(function() {
+          // User re-authenticated.
+        }, function(error) {
+          // An error happened.
+        });
+      }
+
+      function updateUserPassword(password) {
+        var user = firebase.auth().currentUser;
+
+        user.updatePassword(password).then(function() {
+          // Update successful.
+        }, function(error) {
+          // An error happened.
+        });
+      };
+
+      function updateUserEmail(email) {
+        var user = firebase.auth().currentUser;
+
+        user.updateEmail(email).then(function() {
+          // Update successful.
+        }, function(error) {
+          // An error happened.
+        });
+      };
+
+      function updateUserInfo(name, picUrl) {
+        var user = firebase.auth().currentUser;
+
+        user.updateProfile({
+          displayName: name,
+          photoURL: picUrl
+        }).then(function(result) {
+          currentUser = getUserInfo();
+          // Update successful.
+        }, function(error) {
+          // An error happened.
+        });
+      };
+
+      function deleteUser() {
+        var user = firebase.auth().currentUser;
+
+        user.delete().then(function() {
+          // User deleted.
+        }, function(error) {
+          // An error happened.
+        });
+      }
+
+      function getUserInfo() {
+        var user = firebase.auth().currentUser;
+
+          if (user === null) {
+            return null;
+          }
+
+          return details = {
+            name:     user.displayName,
+            email:    user.email,
+            photoUrl: user.photoURL,
+            userId:   user.uid
+          }
+      };
+
+      function createUser(email, password) {
+        firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        alert(errorMessage);
+        });
+      };
+
+      function signIn(email, password) {
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function(result) {
+          debugger;
+          console.log(result)
+        }, function(error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          alert(errorMessage);
+        });
+      };
+
+      function signOut() {
+        firebase.auth().signOut().then(function(result) {
+          // Sign-out successful.
+          alert('signed out, please come back soon');
+        }, function(error) {
+          var errorMessage = error.message;
+          alert(errorMessage);
+        });
+      };
+
+      // watch the auth token.
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          currentUser = getUserInfo();
+          // User is signed in.
+        } else {
+          currentUser = null;
+          // No user is signed in.
+        }
+      });
+      // - - - - - - - - //
+
     </script>
   </body>
 </html>
