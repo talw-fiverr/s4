@@ -1,0 +1,14 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] CLI Version:  3.0.4
+[debug] Platform:     darwin
+[debug] Node Version: v4.4.1
+[debug] Time:         Fri Jul 29 2016 22:41:23 GMT+0300 (IDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: /Users/tal.waserman/Desktop/sports/sports
+[info] Public Directory: src
+[info] 
+[info] Server listening at: http://localhost:5000
