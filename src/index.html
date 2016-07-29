@@ -7,27 +7,14 @@
     <title>Welcome to Firebase Hosting</title>
   </head>
   <body>
-    <h1 id="bigOne">
-      tal
-    </div>
-    <div id="message">
-      <h1>Welcome to Firebase Hosting</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <ul>
-        <li><a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a></li>
-      </ul>
+
+    <div>
+      האתר בבניה
     </div>
 
-    <h1>
-      This is the progress bar
-    </h1>
+    <!-- <div>This is the progress bar</div>
     <progress value="0" max="100" id="uploader">0%</progress>
-    <input type="file" value="upload" id="fileButton" />
-
-    <img src="https://firebasestorage.googleapis.com/v0/b/mygroups-9ffdc.appspot.com/o/users_images%2Fmyimage.jpeg?alt=media&token=77b2c730-a1f6-4add-995d-806c4ff8d647"/>
-
-
-
+    <input type="file" value="upload" id="fileButton" /> -->
 
     <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
     <script>
@@ -40,13 +27,10 @@
       };
       firebase.initializeApp(config);
 
-      // var bigOne = document.getElementById('bigOne');
-      // var dbRef = firebase.database().ref().child('text');
-      // dbRef.on('value', snap => bigOne.innerText = snap.val());
 
       var database = firebase.database();
-      // Progress bar logic
 
+      // - - - - - Progress bar logic - - - - -//
       // Get elements
       var uploader = document.getElementById('uploader');
       var fileButton = document.getElementById('fileButton');
@@ -76,6 +60,7 @@
         }
       )
       });
+      // - - - - - - - - - - - - - - - - -//
 
       // - - - - realTime dataBase - - - - //
       function setData(userId, name, message) {
