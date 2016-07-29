@@ -1,63 +1,68 @@
 @font-face {
-    font-family: "My Custom Font";
+    font-family: "custom-bold";
     src:  url('/fonts/SecularOne-Regular.ttf')  format('truetype'),
           url('/fonts/SecularOne-Regular.woff')  format('woff');
+
+    font-family: "custom-regular";
+    src:  url('/fonts/MiriamLibre-Regular.ttf')  format('truetype'),
+          url('/fonts/MiriamLibre-Regular.woff')  format('woff');
 }
 
-body {
-  font-family:  "My Custom Font",Roboto, Arial, sans-serif;
-  background: #ECEFF1;
-  color: rgba(0,0,0,0.87);
+/* phone */
+@media only screen and (max-device-width: 480px) {
+  body {
+    font-family:  "custom-regular",Roboto, Arial, sans-serif;
+    background: #ECEFF1;
+    color: rgba(0,0,0,0.87);
+    text-align: center;
+    padding-top: 55px;
+    font-size: 25px;
+    /*background-image: url("/images/running.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 1000px;*/
+  }
+
+  .header-title {
+    font-family:  "custom-bold",Roboto, Arial, sans-serif;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 36px;
+  }
+
+  .header-sub-title {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 0;
+    color: #757575;
+  }
+
+
 }
 
-a {
-  color: rgb(3,155,229);
-}
+/* desktop */
+@media only screen and (min-device-width: 482px) {
+  body {
+    font-family:  "custom-regular",Roboto, Arial, sans-serif;
+    background: #ECEFF1;
+    color: rgba(0,0,0,0.87);
+    background-image: url("/images/running.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 1000px;
+  }
 
-.header-title {
-  text-align: center;
-}
+  .header-title {
+    font-family:  "custom-bold",Roboto, Arial, sans-serif;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 60px;
+  }
 
-#message {
-  max-width: 400px;
-  margin: 40px auto;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
-  border-radius: 2px;
-  background: white;
-  padding: 16px 24px;
-}
-
-#message h1 {
-  font-size: 22px;
-  font-weight: 500;
-  text-align: center;
-  margin: 0 0 16px;
-}
-
-#message p {
-  font-weight: 300;
-  line-height: 150%;
-}
-
-#message ul {
-  list-style: none;
-  margin: 16px 0 0;
-  padding: 0;
-  text-align: center;
-}
-
-#message li a {
-  display: inline-block;
-  padding: 8px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 500;
-  background: rgb(3,155,229);
-  color: white;
-  border: 1px solid rgb(3,155,229);
-  border-radius: 3px;
-  font-size: 14px;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  .header-sub-title {
+    font-size: 23px;
+    text-align: center;
+    margin-top: 0;
+    color: #757575;
+  }
 }
 
 #uploader {
