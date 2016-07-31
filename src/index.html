@@ -122,7 +122,8 @@
       }
       var models = {
         currentGroup: {},
-        allGroups: {}
+        allGroups: {},
+        search: {}
       }
 
       function addGroup(groupInfo) {
@@ -186,6 +187,16 @@
         firebase.database().ref('groups').once('value').then(function(snapshot) {
           models.allGroups = snapshot.val();
         });
+      };
+
+      function searchGroups(term) {
+         firebase.database().ref('groups')
+           .orderByChild('promotion')
+           .startAt(3)
+           .endAt(80)
+           .once('value').then(function(snapshot) {
+              models.search = snapshot.val();
+         });
       };
       // - - - - - - - - //
 
