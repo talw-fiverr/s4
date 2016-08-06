@@ -14,11 +14,11 @@
       display: inline-block;
       padding: 5px 15px;
 
-      > a {
+      > a, Link {
         color: $white;
       }
 
-      > a:hover {
+      > a:hover, Link:hover {
         color: $yellow;
       }
     }

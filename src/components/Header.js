@@ -1,6 +1,5 @@
 require('../style/header.scss');
 import React, { Component } from 'react';
-import Navbar from 'react-bootstrap/lib/Navbar';
 
 export default class Header extends Component {
   render() {

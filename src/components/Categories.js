@@ -1,13 +1,13 @@
 require('../style/categories.scss');
 import React, { Component } from 'react';
-import Navbar from 'react-bootstrap/lib/Navbar';
+import { Router, Route, Link } from 'react-router'
 
 export default class Categories extends Component {
   render() {
     return (
       <div className="app-categories">
         <ul className="link-list">
-          <li><a href="!#">ריצה</a></li>
+          <li><Link to={`/categoryPage/running`}>ריצה</Link></li>
           <li><a href="!#">הליכה</a></li>
           <li><a href="!#">שחיה</a></li>
           <li><a href="!#">אופנים</a></li>
