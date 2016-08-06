@@ -119,12 +119,13 @@
             'אופנים': true
           }
         }
-      }
+      };
+
       var models = {
         currentGroup: {},
         allGroups: {},
         search: {}
-      }
+      };
 
       function addGroup(groupInfo) {
         firebase.database().ref('groups/' + groupInfo.name).set(groupInfo).then(function() {

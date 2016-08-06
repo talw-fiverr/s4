@@ -1,0 +1,80 @@
+// Site palet
+$green: #00b22d;
+$yellow: #FFFF00;
+$purple: #9966CC;
+$black: #1f1f1f;
+$white: #fff;
+$light-gray: #f1f1f1;
+
+// Family font
+@font-face {
+    font-family: "custom-bold";
+    src:  url('/fonts/SecularOne-Regular.ttf')  format('truetype'),
+          url('/fonts/SecularOne-Regular.woff')  format('woff');
+
+    font-family: "custom-regular";
+    src:  url('/fonts/MiriamLibre-Regular.ttf')  format('truetype'),
+          url('/fonts/MiriamLibre-Regular.woff')  format('woff');
+}
+
+
+/* phone */
+@media only screen and (max-device-width: 480px) {
+  body {
+    background: $light-gray;
+    color: rgba(0,0,0,0.87);
+    font-size: 25px;
+    background-image: url("/images/background.jpg");
+    background-repeat:no-repeat;
+    background-size: 100% 1000px;
+  }
+}
+
+/* desktop */
+@media only screen and (min-device-width: 482px) {
+  body {
+    background: $light-gray;
+    color: rgba(0,0,0,0.87);
+  }
+}
+
+/* General configurations */
+.small-link {
+  color: $light-gray;
+  font-family: inherit;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $green;
+    text-decoration: none;
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* general components */
+.small-button {
+  background-color: $green;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 12px 7px 12px;
+  line-height: 13px;
+  color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+.app-input-text {
+  border-radius: 3px;
+  border: 0;
+  padding: 5px 10px;
+  width: 350px;
+  direction: rtl;
+}

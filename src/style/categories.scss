@@ -1,0 +1,27 @@
+@import "siteConfig";
+
+.app-categories {
+  .link-list {
+    background-color: $purple;
+    width:100%;
+    list-style-type: none;
+    display: inline-block;
+    padding-right: 15px;
+
+
+    > li {
+      float: right;
+      display: inline-block;
+      padding: 5px 15px;
+
+      > a {
+        color: $white;
+      }
+
+      > a:hover {
+        color: $yellow;
+      }
+    }
+
+  }
+}

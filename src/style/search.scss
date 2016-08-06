@@ -1,0 +1,17 @@
+@import "siteConfig";
+
+/* phone */
+@media only screen and (max-device-width: 480px) {
+  .app-search {
+    font-size: 25px;
+  }
+}
+
+/* desktop */
+@media only screen and (min-device-width: 482px) {
+  .app-search {
+    color: rgba(0,0,0,0.87);
+    background-image: url('/images/running.jpg');
+    height: 370px;
+  }
+}

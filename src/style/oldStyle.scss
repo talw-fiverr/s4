@@ -1,3 +1,7 @@
+// Site palet
+$green: #00FF00;
+
+
 @font-face {
     font-family: "custom-bold";
     src:  url('/fonts/SecularOne-Regular.ttf')  format('truetype'),
@@ -6,6 +10,11 @@
     font-family: "custom-regular";
     src:  url('/fonts/MiriamLibre-Regular.ttf')  format('truetype'),
           url('/fonts/MiriamLibre-Regular.woff')  format('woff');
+}
+
+/* General style */
+.test {
+  color: $green;
 }
 
 /* phone */
@@ -54,7 +63,7 @@
     background: #ECEFF1;
     color: rgba(0,0,0,0.87);
     background-image: url("/images/running.jpg");
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-size: 100% 1000px;
   }
 

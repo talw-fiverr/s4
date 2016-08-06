@@ -1,26 +1,40 @@
+var webpack = require('webpack'),
+    path    = require('path');
+
 module.exports = {
-  entry: [
-    './src/index.js'
-  ],
+  entry: './src/index.js',
   output: {
-    path: __dirname,
-    publicPath: '/public',
+    path: path.join(__dirname, 'build'),
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        presets: ['react', 'es2015', 'stage-1']
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        loader: 'babel',
+        query: {
+          presets: ['react', 'es2015']
+        }
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=20000'
+      },
+      {
+        test: /\.scss$/,
+        exclude: /(node_modules)/,
+        loader: 'style-loader!css-loader!sass-loader'
       }
-    }]
+    ]
   },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
   devServer: {
+    inline: true,
     historyApiFallback: true,
-    contentBase: './'
+    contentBase: './build',
+    port: 3000
   }
 };
