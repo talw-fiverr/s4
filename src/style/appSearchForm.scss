@@ -5,27 +5,48 @@
   background-color: rgba(0,0,0,0.6);
   opacity: 0.7;
   position: relative;
-  top: 260px;
-  height: 110px;
+  top: 402px;
+  height: 63px;
 }
 
 .app-search-form-inner {
   position: relative;
-  top: 150px;
-  height: 110px;
+  top: 332px;
   float: right;
+
+  select {
+    border: 1px solid #ccc;
+    -webkit-appearance: manulist-button;
+    height: 30px;
+    font-size: 16px;
+    margin-left: 10px;
+  }
 
   .app-input-text {
     border-radius: 3px;
     border: 0;
     padding: 5px 10px;
     width: 250px;
-    margin: 25px 22px;
+    margin: 25px 10px;
     direction: rtl;
   }
 
-  input[type="text"] {
+  input[type="text"], input[type="number"] {
     font-size:16px;
     font-family: inherit;
+    margin-left: 10px;
+    border-radius: 3px;
+    padding: 3px 10px;
+    border: 0;
   }
+
+  input[type="number"] {
+    width: 118px;
+  }
+
+  .small-button {
+    background-color: #9966CC;
+    font-size: 16px;
+  }
+
 }
