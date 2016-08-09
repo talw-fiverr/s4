@@ -1,5 +1,8 @@
 @import "siteConfig";
 
 .app-groups {
-
+  ul {
+    list-style: none;
+    direction: ltr;
+  }
 }

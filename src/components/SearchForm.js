@@ -1,6 +1,6 @@
 require('../style/appSearchForm.scss');
-import React, { Component } from 'react';
 
+import React, { Component } from 'react';
 export default class SearchForm extends Component {
 
   // called when a new instance is called
@@ -10,7 +10,6 @@ export default class SearchForm extends Component {
   }
 
   onInputChange(event) {
-    debugger;
     this.setState({ term: event.target.value });
     console.log(event.target.value);
   }

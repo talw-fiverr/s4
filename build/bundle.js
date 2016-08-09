@@ -64,27 +64,31 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _AboutPage = __webpack_require__(271);
+	var _AboutPage = __webpack_require__(272);
 
 	var _AboutPage2 = _interopRequireDefault(_AboutPage);
 
-	var _CategoryPage = __webpack_require__(272);
+	var _CategoryPage = __webpack_require__(273);
 
 	var _CategoryPage2 = _interopRequireDefault(_CategoryPage);
 
-	var _ContactUsPage = __webpack_require__(273);
+	var _ContactUsPage = __webpack_require__(274);
 
 	var _ContactUsPage2 = _interopRequireDefault(_ContactUsPage);
 
-	var _ManageGroupsPage = __webpack_require__(274);
+	var _CollaborationsPage = __webpack_require__(275);
+
+	var _CollaborationsPage2 = _interopRequireDefault(_CollaborationsPage);
+
+	var _ManageGroupsPage = __webpack_require__(276);
 
 	var _ManageGroupsPage2 = _interopRequireDefault(_ManageGroupsPage);
 
-	var _PrivacyPage = __webpack_require__(275);
+	var _PrivacyPage = __webpack_require__(277);
 
 	var _PrivacyPage2 = _interopRequireDefault(_PrivacyPage);
 
-	var _QaPage = __webpack_require__(276);
+	var _QaPage = __webpack_require__(278);
 
 	var _QaPage2 = _interopRequireDefault(_QaPage);
 
@@ -103,7 +107,13 @@
 	  _reactRouter.Router,
 	  { history: _reactRouter.browserHistory },
 	  _react2.default.createElement(_reactRouter.Route, { path: '/', component: _App2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: 'About', component: _AboutPage2.default })
+	  _react2.default.createElement(_reactRouter.Route, { path: '/About', component: _AboutPage2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/Collaborations', component: _CollaborationsPage2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/Category/*', component: _CategoryPage2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/ContactUs', component: _ContactUsPage2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/ManageGroups', component: _ManageGroupsPage2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/Privacy', component: _PrivacyPage2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/Qa', component: _QaPage2.default })
 	), document.querySelector('.app-container'));
 
 	//ReactDOM.render(<App />, document.querySelector('.app-container'));
@@ -27113,7 +27123,7 @@
 
 	var _Search2 = _interopRequireDefault(_Search);
 
-	var _Footer = __webpack_require__(266);
+	var _Footer = __webpack_require__(267);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -27125,7 +27135,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(269);
+	__webpack_require__(270);
 
 	var App = function (_Component) {
 	  _inherits(App, _Component);
@@ -27172,6 +27182,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRouter = __webpack_require__(159);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27200,7 +27212,11 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'app-logo' },
-	          _react2.default.createElement('img', { src: './images/sports-logo.png' })
+	          _react2.default.createElement(
+	            _reactRouter.Link,
+	            { to: '/' },
+	            _react2.default.createElement('img', { src: './images/sports-logo.png' })
+	          )
 	        ),
 	        _react2.default.createElement(
 	          'ul',
@@ -27256,10 +27272,10 @@
 
 	exports = module.exports = __webpack_require__(252)();
 	// imports
-
+	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"custom-bold\";\n  src: url(\"/fonts/SecularOne-Regular.ttf\") format(\"truetype\"), url(\"/fonts/SecularOne-Regular.woff\") format(\"woff\");\n  font-family: \"custom-regular\";\n  src: url(\"/fonts/MiriamLibre-Regular.ttf\") format(\"truetype\"), url(\"/fonts/MiriamLibre-Regular.woff\") format(\"woff\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-header {\n  width: 100%;\n  background-color: #1f1f1f;\n  color: white;\n  height: 60px; }\n  .app-header .app-logo {\n    color: #fff;\n    font-size: 18px;\n    padding: 10px 20px;\n    display: inline-block; }\n  .app-header ul {\n    list-style-type: none;\n    display: inline-block;\n    float: right;\n    padding: 20px 30px 0 10px; }\n    .app-header ul li {\n      display: inline-block;\n      padding-left: 20px; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-header {\n  width: 100%;\n  background-color: #1f1f1f;\n  color: white;\n  height: 60px; }\n  .app-header .app-logo {\n    color: #fff;\n    font-size: 18px;\n    padding: 10px 20px;\n    display: inline-block; }\n  .app-header ul {\n    list-style-type: none;\n    display: inline-block;\n    float: right;\n    padding: 20px 30px 0 10px; }\n    .app-header ul li {\n      display: inline-block;\n      padding-left: 20px; }\n", ""]);
 
 	// exports
 
@@ -27792,10 +27808,10 @@
 
 	exports = module.exports = __webpack_require__(252)();
 	// imports
-
+	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"custom-bold\";\n  src: url(\"/fonts/SecularOne-Regular.ttf\") format(\"truetype\"), url(\"/fonts/SecularOne-Regular.woff\") format(\"woff\");\n  font-family: \"custom-regular\";\n  src: url(\"/fonts/MiriamLibre-Regular.ttf\") format(\"truetype\"), url(\"/fonts/MiriamLibre-Regular.woff\") format(\"woff\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-categories .link-list {\n  background-color: #9966CC;\n  width: 100%;\n  list-style-type: none;\n  display: inline-block;\n  padding-right: 15px; }\n  .app-categories .link-list > li {\n    float: right;\n    display: inline-block;\n    padding: 5px 15px; }\n    .app-categories .link-list > li > a, .app-categories .link-list > li Link {\n      color: #fff; }\n    .app-categories .link-list > li > a:hover, .app-categories .link-list > li Link:hover {\n      color: #FFFF00; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-categories {\n  height: 30px; }\n  .app-categories .link-list {\n    background-color: #9966CC;\n    width: 100%;\n    list-style-type: none;\n    display: inline-block;\n    padding-right: 15px; }\n    .app-categories .link-list > li {\n      float: right;\n      display: inline-block;\n      padding: 5px 15px; }\n      .app-categories .link-list > li > a, .app-categories .link-list > li Link {\n        color: #fff; }\n      .app-categories .link-list > li > a:hover, .app-categories .link-list > li Link:hover {\n        color: #FFFF00; }\n", ""]);
 
 	// exports
 
@@ -27883,10 +27899,10 @@
 
 	exports = module.exports = __webpack_require__(252)();
 	// imports
-
+	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"custom-bold\";\n  src: url(\"/fonts/SecularOne-Regular.ttf\") format(\"truetype\"), url(\"/fonts/SecularOne-Regular.woff\") format(\"woff\");\n  font-family: \"custom-regular\";\n  src: url(\"/fonts/MiriamLibre-Regular.ttf\") format(\"truetype\"), url(\"/fonts/MiriamLibre-Regular.woff\") format(\"woff\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n", ""]);
 
 	// exports
 
@@ -27919,7 +27935,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(264);
+	__webpack_require__(265);
 
 	var Search = function (_Component) {
 	  _inherits(Search, _Component);
@@ -27958,6 +27974,10 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+	var _cities = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../jsonData/cities.json\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+	var _cities2 = _interopRequireDefault(_cities);
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -27970,7 +27990,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(262);
+	__webpack_require__(263);
 
 	var SearchForm = function (_Component) {
 	  _inherits(SearchForm, _Component);
@@ -27982,6 +28002,7 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SearchForm).call(this, props));
 
 	    _this.state = { term: '' };
+	    debugger;
 	    return _this;
 	  }
 
@@ -27998,20 +28019,217 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement('div', { className: 'app-search-form-wrapper' }),
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'app-search-form-inner' },
-	          _react2.default.createElement('input', {
-	            type: 'text',
-	            placeholder: 'שם קבוצה',
-	            className: 'app-input-text',
-	            value: this.state.term,
-	            onChange: this.onInputChange }),
 	          _react2.default.createElement(
-	            'h1',
-	            null,
-	            this.state.term
+	            'select',
+	            { dir: 'rtl' },
+	            _react2.default.createElement(
+	              'option',
+	              { value: '', disabled: true, selected: true },
+	              'מין'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'בנים'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'בנות'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'מעורב'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { dir: 'rtl' },
+	            _react2.default.createElement(
+	              'option',
+	              { value: '', disabled: true, selected: true },
+	              'טווח גילאים'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '10-12'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '12-14'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '14-16'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '16-18'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '18-25'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '25-35'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '35-45'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '45-55'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '55-65'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '65-75'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { dir: 'rtl' },
+	            _react2.default.createElement(
+	              'option',
+	              { value: '', disabled: true, selected: true },
+	              'גודל הקבוצה'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '1-5'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '5-10'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '10-20'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '20-40'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '40-80'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '80-120'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { dir: 'rtl' },
+	            _react2.default.createElement(
+	              'option',
+	              { value: '', disabled: true, selected: true },
+	              'סוג הקבוצה'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'מותאם אישית'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'אחרי הריון'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'להזיז קצת את הגוף'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'חוזרים לכושר'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'תחרותי'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { dir: 'rtl' },
+	            _react2.default.createElement(
+	              'option',
+	              { value: '', disabled: true, selected: true },
+	              'עיר'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'פרדס חנה'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'כרכור'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'נתניה'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { dir: 'rtl', className: 'category' },
+	            _react2.default.createElement(
+	              'option',
+	              { value: '', disabled: true, selected: true },
+	              'קטגוריה'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'ריצה'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'שחיה'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'הליכה'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'a',
+	            { href: '!#', className: 'search-btn small-button' },
+	            'חפש'
 	          )
 	        )
 	      );
@@ -28024,13 +28242,14 @@
 	exports.default = SearchForm;
 
 /***/ },
-/* 262 */
+/* 262 */,
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(263);
+	var content = __webpack_require__(264);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(253)(content, {});
@@ -28050,27 +28269,27 @@
 	}
 
 /***/ },
-/* 263 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(252)();
 	// imports
-
+	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"custom-bold\";\n  src: url(\"/fonts/SecularOne-Regular.ttf\") format(\"truetype\"), url(\"/fonts/SecularOne-Regular.woff\") format(\"woff\");\n  font-family: \"custom-regular\";\n  src: url(\"/fonts/MiriamLibre-Regular.ttf\") format(\"truetype\"), url(\"/fonts/MiriamLibre-Regular.woff\") format(\"woff\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-search-form-wrapper {\n  background-color: rgba(0, 0, 0, 0.6);\n  opacity: 0.7;\n  position: relative;\n  top: 260px;\n  height: 110px; }\n\n.app-search-form-inner {\n  position: relative;\n  top: 150px;\n  height: 110px;\n  float: right; }\n  .app-search-form-inner .app-input-text {\n    border-radius: 3px;\n    border: 0;\n    padding: 5px 10px;\n    width: 250px;\n    margin: 25px 22px;\n    direction: rtl; }\n  .app-search-form-inner input[type=\"text\"] {\n    font-size: 16px;\n    font-family: inherit; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-search-form-inner {\n  position: relative;\n  top: 415px;\n  background-color: rgba(0, 0, 0, 0.6);\n  padding: 10px; }\n  .app-search-form-inner select {\n    border: 1px solid #ccc;\n    -webkit-appearance: manulist-button;\n    height: 30px;\n    font-size: 16px;\n    margin-left: 10px; }\n  .app-search-form-inner .app-input-text {\n    border-radius: 3px;\n    border: 0;\n    padding: 5px 10px;\n    width: 250px;\n    margin: 25px 10px;\n    direction: rtl; }\n  .app-search-form-inner input[type=\"text\"], .app-search-form-inner input[type=\"number\"] {\n    font-size: 16px;\n    font-family: inherit;\n    margin-left: 10px;\n    border-radius: 3px;\n    padding: 3px 10px;\n    border: 0; }\n  .app-search-form-inner input[type=\"number\"] {\n    width: 118px; }\n  .app-search-form-inner .small-button {\n    background-color: #9966CC;\n    font-size: 16px; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 264 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(265);
+	var content = __webpack_require__(266);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(253)(content, {});
@@ -28090,21 +28309,21 @@
 	}
 
 /***/ },
-/* 265 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(252)();
 	// imports
-
+	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"custom-bold\";\n  src: url(\"/fonts/SecularOne-Regular.ttf\") format(\"truetype\"), url(\"/fonts/SecularOne-Regular.woff\") format(\"woff\");\n  font-family: \"custom-regular\";\n  src: url(\"/fonts/MiriamLibre-Regular.ttf\") format(\"truetype\"), url(\"/fonts/MiriamLibre-Regular.woff\") format(\"woff\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  .app-search {\n    font-size: 25px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  .app-search {\n    color: rgba(0, 0, 0, 0.87);\n    background-image: url(\"/images/running.jpg\");\n    height: 370px; } }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  .app-search {\n    font-size: 25px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  .app-search {\n    color: rgba(0, 0, 0, 0.87);\n    background-image: url(\"/images/running.jpg\");\n    height: 465px; } }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 266 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28129,7 +28348,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(267);
+	__webpack_require__(268);
 
 	var Footer = function (_Component) {
 	  _inherits(Footer, _Component);
@@ -28210,13 +28429,13 @@
 	exports.default = Footer;
 
 /***/ },
-/* 267 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(268);
+	var content = __webpack_require__(269);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(253)(content, {});
@@ -28236,27 +28455,27 @@
 	}
 
 /***/ },
-/* 268 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(252)();
 	// imports
-
+	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"custom-bold\";\n  src: url(\"/fonts/SecularOne-Regular.ttf\") format(\"truetype\"), url(\"/fonts/SecularOne-Regular.woff\") format(\"woff\");\n  font-family: \"custom-regular\";\n  src: url(\"/fonts/MiriamLibre-Regular.ttf\") format(\"truetype\"), url(\"/fonts/MiriamLibre-Regular.woff\") format(\"woff\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-footer {\n  position: fixed;\n  width: 100%;\n  bottom: 0;\n  background-color: #1f1f1f;\n  padding: 10px 10px;\n  color: #f1f1f1;\n  height: 40px; }\n  .app-footer .copy-rights {\n    display: inline-block;\n    padding-left: 10px; }\n  .app-footer .link-list {\n    list-style-type: none;\n    display: inline-block;\n    float: right; }\n    .app-footer .link-list li {\n      display: inline-block;\n      padding: 0px 15px; }\n    .app-footer .link-list li:not(:first-child) {\n      border-left-width: 1px;\n      border-left-color: #fff;\n      border-left-style: solid; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-footer {\n  position: fixed;\n  width: 100%;\n  bottom: 0;\n  background-color: #1f1f1f;\n  padding: 10px 10px;\n  color: #f1f1f1;\n  height: 40px; }\n  .app-footer .copy-rights {\n    display: inline-block;\n    padding-left: 10px; }\n  .app-footer .link-list {\n    list-style-type: none;\n    display: inline-block;\n    float: right; }\n    .app-footer .link-list li {\n      display: inline-block;\n      padding: 0px 15px; }\n    .app-footer .link-list li:not(:first-child) {\n      border-left-width: 1px;\n      border-left-color: #fff;\n      border-left-style: solid; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 269 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(270);
+	var content = __webpack_require__(271);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(253)(content, {});
@@ -28276,68 +28495,18 @@
 	}
 
 /***/ },
-/* 270 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(252)();
 	// imports
-
+	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"custom-bold\";\n  src: url(\"/fonts/SecularOne-Regular.ttf\") format(\"truetype\"), url(\"/fonts/SecularOne-Regular.woff\") format(\"woff\");\n  font-family: \"custom-regular\";\n  src: url(\"/fonts/MiriamLibre-Regular.ttf\") format(\"truetype\"), url(\"/fonts/MiriamLibre-Regular.woff\") format(\"woff\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n", ""]);
 
 	// exports
 
-
-/***/ },
-/* 271 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	// import Header from      '../components/Header';
-	// import Footer from      '../components/Footer';
-
-	var AboutPage = function (_Component) {
-	  _inherits(AboutPage, _Component);
-
-	  function AboutPage() {
-	    _classCallCheck(this, AboutPage);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(AboutPage).apply(this, arguments));
-	  }
-
-	  _createClass(AboutPage, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          'This is the about page'
-	        )
-	      );
-	    }
-	  }]);
-
-	  return AboutPage;
-	}(_react.Component);
 
 /***/ },
 /* 272 */
@@ -28355,9 +28524,85 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactDom = __webpack_require__(158);
+	var _Header = __webpack_require__(249);
 
-	var _reactDom2 = _interopRequireDefault(_reactDom);
+	var _Header2 = _interopRequireDefault(_Header);
+
+	var _Categories = __webpack_require__(254);
+
+	var _Categories2 = _interopRequireDefault(_Categories);
+
+	var _Footer = __webpack_require__(267);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var AboutPage = function (_Component) {
+	  _inherits(AboutPage, _Component);
+
+	  function AboutPage() {
+	    _classCallCheck(this, AboutPage);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(AboutPage).apply(this, arguments));
+	  }
+
+	  _createClass(AboutPage, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_Header2.default, null),
+	        _react2.default.createElement(_Categories2.default, null),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          'This is the about page'
+	        ),
+	        _react2.default.createElement(_Footer2.default, null)
+	      );
+	    }
+	  }]);
+
+	  return AboutPage;
+	}(_react.Component);
+
+	exports.default = AboutPage;
+
+/***/ },
+/* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Header = __webpack_require__(249);
+
+	var _Header2 = _interopRequireDefault(_Header);
+
+	var _Categories = __webpack_require__(254);
+
+	var _Categories2 = _interopRequireDefault(_Categories);
+
+	var _Footer = __webpack_require__(267);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28388,7 +28633,14 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        'this is the category page'
+	        _react2.default.createElement(_Header2.default, null),
+	        _react2.default.createElement(Category, null),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          'this is the category page'
+	        ),
+	        _react2.default.createElement(_Footer2.default, null)
 	      );
 	    }
 	  }]);
@@ -28399,10 +28651,14 @@
 	exports.default = CategoryPage;
 
 /***/ },
-/* 273 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -28414,7 +28670,11 @@
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Footer = __webpack_require__(266);
+	var _Categories = __webpack_require__(254);
+
+	var _Categories2 = _interopRequireDefault(_Categories);
+
+	var _Footer = __webpack_require__(267);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -28442,6 +28702,7 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_Header2.default, null),
+	        _react2.default.createElement(_Categories2.default, null),
 	        _react2.default.createElement(
 	          'div',
 	          null,
@@ -28455,17 +28716,103 @@
 	  return ContactUsPage;
 	}(_react.Component);
 
+	exports.default = ContactUsPage;
+
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _Header = __webpack_require__(249);
+
+	var _Header2 = _interopRequireDefault(_Header);
+
+	var _Categories = __webpack_require__(254);
+
+	var _Categories2 = _interopRequireDefault(_Categories);
+
+	var _Footer = __webpack_require__(267);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var CollaborationsPage = function (_Component) {
+	  _inherits(CollaborationsPage, _Component);
+
+	  function CollaborationsPage() {
+	    _classCallCheck(this, CollaborationsPage);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CollaborationsPage).apply(this, arguments));
+	  }
+
+	  _createClass(CollaborationsPage, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(_Header2.default, null),
+	        _react2.default.createElement(_Categories2.default, null),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          'This is the collaborations page'
+	        ),
+	        _react2.default.createElement(_Footer2.default, null)
+	      );
+	    }
+	  }]);
+
+	  return CollaborationsPage;
+	}(_react.Component);
+
+	exports.default = CollaborationsPage;
+
+/***/ },
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Header = __webpack_require__(249);
+
+	var _Header2 = _interopRequireDefault(_Header);
+
+	var _Categories = __webpack_require__(254);
+
+	var _Categories2 = _interopRequireDefault(_Categories);
+
+	var _Footer = __webpack_require__(267);
+
+	var _Footer2 = _interopRequireDefault(_Footer);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28490,7 +28837,14 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        'this is the manage groups page'
+	        _react2.default.createElement(_Header2.default, null),
+	        _react2.default.createElement(_Categories2.default, null),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          'this is the manage groups page'
+	        ),
+	        _react2.default.createElement(_Footer2.default, null)
 	      );
 	    }
 	  }]);
@@ -28498,11 +28852,17 @@
 	  return ManageGroups;
 	}(_react.Component);
 
+	exports.default = ManageGroups;
+
 /***/ },
-/* 275 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -28514,7 +28874,11 @@
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Footer = __webpack_require__(266);
+	var _Categories = __webpack_require__(254);
+
+	var _Categories2 = _interopRequireDefault(_Categories);
+
+	var _Footer = __webpack_require__(267);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -28542,6 +28906,7 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_Header2.default, null),
+	        _react2.default.createElement(_Categories2.default, null),
 	        _react2.default.createElement(
 	          'div',
 	          null,
@@ -28555,11 +28920,17 @@
 	  return PrivacyPage;
 	}(_react.Component);
 
+	exports.default = PrivacyPage;
+
 /***/ },
-/* 276 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -28571,7 +28942,11 @@
 
 	var _Header2 = _interopRequireDefault(_Header);
 
-	var _Footer = __webpack_require__(266);
+	var _Categories = __webpack_require__(254);
+
+	var _Categories2 = _interopRequireDefault(_Categories);
+
+	var _Footer = __webpack_require__(267);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -28599,6 +28974,7 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(_Header2.default, null),
+	        _react2.default.createElement(_Categories2.default, null),
 	        _react2.default.createElement(
 	          'div',
 	          null,
@@ -28611,6 +28987,8 @@
 
 	  return QaPage;
 	}(_react.Component);
+
+	exports.default = QaPage;
 
 /***/ }
 /******/ ]);

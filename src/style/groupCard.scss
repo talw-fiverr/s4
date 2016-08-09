@@ -1,0 +1,28 @@
+@import "siteConfig";
+
+.app-groupCard {
+  display: inline-block;
+  background-color: #f1f1f1;
+  color: #1f1f1f;
+  height: 200px;
+  margin: 20px 20px 10px 0;
+  vertical-align: top;
+  border: 1px solid #cfcfcf;
+  border-radius: 2px;
+
+  .groupImage {
+    width: 244px;
+    height: 90px;
+    display: block;
+  }
+
+  .description {
+    // TODO: limit the description
+    overflow: hidden;
+    text-align: right;
+    padding: 2px 7px;
+    text-overflow: ellipsis;
+    width: 230px;
+    display: inline-block;
+  }
+}
