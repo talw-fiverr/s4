@@ -18,9 +18,7 @@ export default class SearchForm extends Component {
   render() {
     return (
       <div>
-        <div className="app-search-form-wrapper"></div>
         <div className="app-search-form-inner">
-          <a href="!#" className="search-btn small-button">חפש</a>
           <select dir="rtl">
             <option value="" disabled selected>מין</option>
             <option>בנים</option>
@@ -69,13 +67,14 @@ export default class SearchForm extends Component {
             <option>שחיה</option>
             <option>הליכה</option>
           </select>
-          <input
+          {/*<input
             type="text"
             placeholder="שם קבוצה"
             className="app-input-text"
             value={this.state.term}
             onChange={this.onInputChange}>
-          </input>
+          </input>*/}
+          <a href="!#" className="search-btn small-button">חפש</a>
         </div>
       </div>
     );

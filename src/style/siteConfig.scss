@@ -5,16 +5,12 @@ $purple: #9966CC;
 $black: #1f1f1f;
 $white: #fff;
 $light-gray: #f1f1f1;
+@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
 
 // Family font
 @font-face {
-    font-family: "custom-bold";
-    src:  url('/fonts/SecularOne-Regular.ttf')  format('truetype'),
-          url('/fonts/SecularOne-Regular.woff')  format('woff');
-
-    font-family: "custom-regular";
-    src:  url('/fonts/MiriamLibre-Regular.ttf')  format('truetype'),
-          url('/fonts/MiriamLibre-Regular.woff')  format('woff');
+    font-family: "Open-Sans";
+    src:  url('/fonts/OpenSansHebrew-Bold.ttf')  format('truetype');
 }
 
 
@@ -39,6 +35,11 @@ $light-gray: #f1f1f1;
 }
 
 /* General configurations */
+body {
+  font-family: 'Open Sans Hebrew', sans-serif;
+  direction: rtl;
+}
+
 .small-link {
   color: $light-gray;
   font-family: inherit;
