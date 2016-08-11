@@ -14,11 +14,21 @@ export default class App extends Component {
       groups: [
         {
           description: 'קבוצה זו עוסקת בספורט אתגרי, אם אתה תחרותי ומחפש אתגרים מקומך איתנו',
+          groupName: 'הדולפינים',
+          sportType: 'swimming',
           id: '1'
         },
         {
           description: 'קבוצת חזרה לכושר',
+          groupName: 'האריות',
+          sportType: 'running',
           id: '2'
+        },
+        {
+          description: 'כדורגל של אלופיםת תחרויות ומדליות',
+          groupName: 'הפועל חיפה',
+          sportType: 'soccer',
+          id: '3'
         }
       ]
     };

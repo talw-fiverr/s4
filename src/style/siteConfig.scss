@@ -4,7 +4,7 @@ $yellow: #FFFF00;
 $purple: #9966CC;
 $black: #1f1f1f;
 $white: #fff;
-$light-gray: #f1f1f1;
+$light-gray: #f7f7f7;
 @import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
 
 // Family font
@@ -17,8 +17,6 @@ $light-gray: #f1f1f1;
 /* phone */
 @media only screen and (max-device-width: 480px) {
   body {
-    background: $light-gray;
-    color: rgba(0,0,0,0.87);
     font-size: 25px;
     background-image: url("/images/background.jpg");
     background-repeat:no-repeat;
@@ -29,14 +27,15 @@ $light-gray: #f1f1f1;
 /* desktop */
 @media only screen and (min-device-width: 482px) {
   body {
-    background: $light-gray;
-    color: rgba(0,0,0,0.87);
+
   }
 }
 
 /* General configurations */
 body {
   font-family: 'Open Sans Hebrew', sans-serif;
+  background: $light-gray;
+  color: rgba(0,0,0,0.87);
   //direction: rtl;
 }
 

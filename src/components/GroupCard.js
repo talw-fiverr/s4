@@ -5,16 +5,17 @@ import { Link } from 'react-router'
 export default class GroupCard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      description: props.groupInfo.description
-    };
   }
 
   render() {
+    const classes = `card-header ${this.props.groupInfo.sportType}`;
     return (
         <li className="app-groupCard">
-          <img className="groupImage" src="http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg"></img>
-          <p className="description">{this.state.description}</p>
+          <i className={classes}>
+            <p className="group-name">{this.props.groupInfo.groupName}</p>
+          </i>
+          <p className="description">{this.props.groupInfo.description}</p>
+          <p className="badges"></p>
         </li>
     );
   }

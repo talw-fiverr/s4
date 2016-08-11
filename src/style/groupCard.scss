@@ -2,12 +2,13 @@
 
 .app-groupCard {
   display: inline-block;
-  background-color: #f1f1f1;
+  background-color: $white;
   color: #1f1f1f;
-  height: 200px;
+  height: 220px;
+  width: 246px;
   margin: 20px 20px 10px 0;
   vertical-align: top;
-  border: 1px solid #cfcfcf;
+  border: 1px solid #e5e5e5;
   border-radius: 2px;
 
   .groupImage {
@@ -20,9 +21,72 @@
     // TODO: limit the description
     overflow: hidden;
     text-align: right;
-    padding: 2px 7px;
+    padding: 4px 10px;
     text-overflow: ellipsis;
     width: 230px;
     display: inline-block;
+    direction: rtl;
+    float: right;
+    clear: both;
+  }
+
+  .card-header {
+    display: inline-block;
+    width: 244px;
+    height: 90px;
+
+    .group-name {
+      color: $white;
+      text-align: right;
+      font-size: 20px;
+      padding: 24px 10px;
+      text-shadow: 2px 2px #000;
+    }
+
+    &.swimming {
+      background: url(../images/small-background.jpg) 0 0;
+    }
+    &.bicycle {
+      background: url(../images/small-background.jpg) -244px 0;
+    }
+    &.triatlon {
+      background: url(../images/small-background.jpg) 244px 0;
+    }
+    &.running {
+      background: url(../images/small-background.jpg) 0 -90px;
+    }
+    &.tennis {
+      background: url(../images/small-background.jpg) -244px -90px;
+    }
+    &.judo {
+      background: url(../images/small-background.jpg) 244px -90px;
+    }
+    &.soccer {
+      background: url(../images/small-background.jpg) 0 -180px;
+    }
+    &.surf {
+      background: url(../images/small-background.jpg) -244px -180px;
+    }
+    &.yoga {
+      background: url(../images/small-background.jpg) 244px -180px;
+    }
+    &.basketball {
+      background: url(../images/small-background.jpg) 0 -270px;
+    }
+    &.sap {
+      background: url(../images/small-background.jpg) -244px -270px;
+    }
+    &.pilatis {
+      background: url(../images/small-background.jpg) 244px -270px;
+    }
+    &.walking {
+      background: url(../images/small-background.jpg) 0 -360px;
+    }
+    &.kickboxing {
+      background: url(../images/small-background.jpg) -244px -360px;
+    }
+    &.trx {
+      background: url(../images/small-background.jpg) 244px -360px;
+    }
   }
 }
