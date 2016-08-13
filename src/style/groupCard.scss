@@ -1,6 +1,7 @@
 @import "siteConfig";
 
 .app-groupCard {
+  position: relative;
   display: inline-block;
   background-color: $white;
   color: #1f1f1f;
@@ -39,7 +40,16 @@
       color: $white;
       text-align: right;
       font-size: 20px;
-      padding: 24px 10px;
+      padding: 0 10px;
+      text-shadow: 2px 2px #000;
+      margin: 0;
+    }
+
+    .group-moto {
+      color: $gray;
+      text-align: right;
+      font-size: 16px;
+      padding: 0 13px;
       text-shadow: 2px 2px #000;
     }
 
@@ -88,5 +98,195 @@
     &.trx {
       background: url(../images/small-background.jpg) 244px -360px;
     }
+    &.ballet {
+      background: url(../images/small-background.jpg) 731px -452px;
+    }
+    &.bowling {
+      background: url(../images/small-background.jpg) 244px -451px;
+    }
+    &.Badminton {
+      background: url(../images/small-background.jpg) 244px -540px;
+    }
+    &.gymnastics {
+      background: url(../images/small-background.jpg) 487px -450px;
+    }
+    &.football {
+      background: url(../images/small-background.jpg) 487px -540px;
+    }
+    &.open_water_swimming {
+      background: url(../images/small-background.jpg) 488px -622px;
+    }
+    &.pingpong {
+      background: url(../images/small-background.jpg) 731px -629px;
+    }
+    &.baseball {
+      background: url(../images/small-background.jpg) 731px -542px;
+    }
   }
+
+  // - - - BADGES  & rating - - - //
+  .rating {
+    padding: 8px 15px 0 15px;
+
+    li {
+      display: inline-block;
+      padding-right: 6px;
+
+      i {
+        display: inline-block;
+        background-image: url(../images/badges/favorite.svg);
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .badges {
+    position: absolute;
+    bottom: 0;
+    padding: 8px 13px;
+
+    svg, i {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+    }
+
+    .heart            { background: url(../images/badges/heart.svg) no-repeat; }
+    .heart-selected   { background: url(../images/badges/heart_selected.svg) no-repeat; }
+
+    .sport {
+      margin-right: 8px;
+      height: 44px;
+      width: 43px;
+
+        &.swimming {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -75px -52px;
+        }
+        &.running {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -257px -52px;
+        }
+        &.salling {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -211px -54px;
+        }
+        &.surf {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -164px -54px;
+        }
+        &.tennis {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -27px -54px;
+        }
+        &.sap {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -119px -53px;
+        }
+        &.soccer {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -119px -100px;
+        }
+        &.basketball {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -254px -100px;
+        }
+        &.pilatis {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -254px -100px;
+        }
+        &.pingpong {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -27px -100px;
+        }
+        &.judo {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -72px -100px;
+        }
+        &.bicycle {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -163px -100px;
+        }
+        &.kickboxing {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -210px -100px;
+        }
+        &.pilatis {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -27px -5px;
+        }
+        &.yoga {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -73px -5px;
+        }
+        &.trx {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -120px -5px;
+        }
+        &.Water_Polo {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -166px -5px;
+        }
+        &.Volleyball {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -213px -6px;
+        }
+        &.open_water_swimming {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -259px -6px;
+        }
+        &.ballet {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -28px -145px;
+        }
+        &.gymnastics {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -76px -145px;
+        }
+        &.Badminton {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -123px -145px;
+        }
+        &.football {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -169px -147px;
+        }
+        &.bowling {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -215px -147px;
+        }
+        &.baseball {
+          background: url("../images/sportTypes/sportType.svg") no-repeat;
+          background-size: 330px 195px;
+          background-position: -262px -148px;
+        }
+
+    }
+  }
+  // - - - - - - - - - //
 }

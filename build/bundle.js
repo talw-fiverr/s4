@@ -64,31 +64,31 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _AboutPage = __webpack_require__(272);
+	var _AboutPage = __webpack_require__(278);
 
 	var _AboutPage2 = _interopRequireDefault(_AboutPage);
 
-	var _CategoryPage = __webpack_require__(273);
+	var _CategoryPage = __webpack_require__(279);
 
 	var _CategoryPage2 = _interopRequireDefault(_CategoryPage);
 
-	var _ContactUsPage = __webpack_require__(274);
+	var _ContactUsPage = __webpack_require__(280);
 
 	var _ContactUsPage2 = _interopRequireDefault(_ContactUsPage);
 
-	var _CollaborationsPage = __webpack_require__(275);
+	var _CollaborationsPage = __webpack_require__(281);
 
 	var _CollaborationsPage2 = _interopRequireDefault(_CollaborationsPage);
 
-	var _ManageGroupsPage = __webpack_require__(276);
+	var _ManageGroupsPage = __webpack_require__(282);
 
 	var _ManageGroupsPage2 = _interopRequireDefault(_ManageGroupsPage);
 
-	var _PrivacyPage = __webpack_require__(277);
+	var _PrivacyPage = __webpack_require__(283);
 
 	var _PrivacyPage2 = _interopRequireDefault(_PrivacyPage);
 
-	var _QaPage = __webpack_require__(278);
+	var _QaPage = __webpack_require__(284);
 
 	var _QaPage2 = _interopRequireDefault(_QaPage);
 
@@ -27119,11 +27119,11 @@
 
 	var _Groups2 = _interopRequireDefault(_Groups);
 
-	var _Search = __webpack_require__(260);
+	var _Search = __webpack_require__(267);
 
 	var _Search2 = _interopRequireDefault(_Search);
 
-	var _Footer = __webpack_require__(267);
+	var _Footer = __webpack_require__(273);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -27135,15 +27135,55 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(270);
+	__webpack_require__(276);
 
 	var App = function (_Component) {
 	  _inherits(App, _Component);
 
-	  function App() {
+	  function App(props) {
 	    _classCallCheck(this, App);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this, props));
+
+	    _this.state = {
+	      groups: [{
+	        description: 'קבוצה זו עוסקת בספורט אתגרי, אם אתה תחרותי ומחפש אתגרים מקומך איתנו',
+	        groupName: 'הדולפינים',
+	        groupMoto: 'כל דבר אפשרי אם מאמינים',
+	        sportType: 'swimming',
+	        rating: 5,
+	        id: '1'
+	      }, {
+	        description: 'קבוצת חזרה לכושר',
+	        groupName: 'האריות',
+	        groupMoto: 'אין דבר העומד בפני הרצון',
+	        sportType: 'running',
+	        rating: 2,
+	        id: '2'
+	      }, {
+	        description: 'כדורגל של אלופיםת תחרויות ומדליות',
+	        groupName: 'הפועל חיפה',
+	        groupMoto: 'מתחילים חזק ומגבירים',
+	        sportType: 'soccer',
+	        rating: 1,
+	        id: '3'
+	      }, {
+	        description: 'כדורסל ליגה ב נערים',
+	        groupName: 'מכבי תל אביב',
+	        groupMoto: 'כדורסל של אלופים',
+	        sportType: 'basketball',
+	        rating: 0,
+	        id: '4'
+	      }, {
+	        description: 'פילאטיס לגוף ולנשמה',
+	        groupName: 'שלווה ורוגע',
+	        groupMoto: 'לכל אחד יש שלווה פנימית',
+	        sportType: 'pilatis',
+	        rating: 5,
+	        id: '5'
+	      }]
+	    };
+	    return _this;
 	  }
 
 	  _createClass(App, [{
@@ -27155,7 +27195,7 @@
 	        _react2.default.createElement(_Header2.default, null),
 	        _react2.default.createElement(_Categories2.default, null),
 	        _react2.default.createElement(_Search2.default, null),
-	        _react2.default.createElement(_Groups2.default, null),
+	        _react2.default.createElement(_Groups2.default, { groups: this.state.groups }),
 	        _react2.default.createElement(_Footer2.default, null)
 	      );
 	    }
@@ -27275,7 +27315,7 @@
 	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-header {\n  width: 100%;\n  background-color: #1f1f1f;\n  color: white;\n  height: 60px; }\n  .app-header .app-logo {\n    color: #fff;\n    font-size: 18px;\n    padding: 10px 20px;\n    display: inline-block; }\n  .app-header ul {\n    list-style-type: none;\n    display: inline-block;\n    float: right;\n    padding: 20px 30px 0 10px; }\n    .app-header ul li {\n      display: inline-block;\n      padding-left: 20px; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  background: #f7f7f7;\n  color: rgba(0, 0, 0, 0.87); }\n\n.small-link {\n  color: #f7f7f7;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-header {\n  width: 100%;\n  background-color: #1f1f1f;\n  color: white;\n  height: 60px; }\n  .app-header .app-logo {\n    color: #fff;\n    font-size: 18px;\n    padding: 10px 20px;\n    display: inline-block; }\n  .app-header ul {\n    list-style-type: none;\n    display: inline-block;\n    float: right;\n    padding: 20px 30px 0 10px; }\n    .app-header ul li {\n      display: inline-block;\n      padding-left: 20px; }\n", ""]);
 
 	// exports
 
@@ -27811,7 +27851,7 @@
 	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-categories {\n  height: 30px; }\n  .app-categories .link-list {\n    background-color: #9966CC;\n    width: 100%;\n    list-style-type: none;\n    display: inline-block;\n    padding-right: 15px; }\n    .app-categories .link-list > li {\n      float: right;\n      display: inline-block;\n      padding: 5px 15px; }\n      .app-categories .link-list > li > a, .app-categories .link-list > li Link {\n        color: #fff; }\n      .app-categories .link-list > li > a:hover, .app-categories .link-list > li Link:hover {\n        color: #FFFF00; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  background: #f7f7f7;\n  color: rgba(0, 0, 0, 0.87); }\n\n.small-link {\n  color: #f7f7f7;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-categories {\n  height: 30px; }\n  .app-categories .link-list {\n    background-color: #9966CC;\n    width: 100%;\n    list-style-type: none;\n    display: inline-block;\n    padding-right: 15px; }\n    .app-categories .link-list > li {\n      float: right;\n      display: inline-block;\n      padding: 5px 15px; }\n      .app-categories .link-list > li > a, .app-categories .link-list > li Link {\n        color: #fff; }\n      .app-categories .link-list > li > a:hover, .app-categories .link-list > li Link:hover {\n        color: #FFFF00; }\n", ""]);
 
 	// exports
 
@@ -27832,6 +27872,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _GroupCard = __webpack_require__(258);
+
+	var _GroupCard2 = _interopRequireDefault(_GroupCard);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -27840,15 +27884,20 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(258);
+	__webpack_require__(265);
 
 	var Groups = function (_Component) {
 	  _inherits(Groups, _Component);
 
-	  function Groups() {
+	  function Groups(props) {
 	    _classCallCheck(this, Groups);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Groups).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Groups).call(this, props));
+
+	    _this.state = {
+	      groups: props.groups
+	    };
+	    return _this;
 	  }
 
 	  _createClass(Groups, [{
@@ -27857,7 +27906,13 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'app-groups' },
-	        'this is the groups section'
+	        _react2.default.createElement(
+	          'ul',
+	          null,
+	          this.state.groups.map(function (groupInfo) {
+	            return _react2.default.createElement(_GroupCard2.default, { groupInfo: groupInfo, key: groupInfo.id });
+	          })
+	        )
 	      );
 	    }
 	  }]);
@@ -27871,10 +27926,171 @@
 /* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(159);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	__webpack_require__(259);
+
+	var GroupCard = function (_Component) {
+	  _inherits(GroupCard, _Component);
+
+	  function GroupCard(props) {
+	    _classCallCheck(this, GroupCard);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(GroupCard).call(this, props));
+	  }
+
+	  _createClass(GroupCard, [{
+	    key: 'generateRating',
+	    value: function generateRating(number) {
+	      var i = void 0;
+	      var ratingArray = [];
+	      for (i = 0; i < this.props.groupInfo.rating; i++) {
+	        ratingArray.push(_react2.default.createElement(
+	          'li',
+	          { key: i },
+	          _react2.default.createElement('i', null)
+	        ));
+	      }
+	      return ratingArray;
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var classes = 'card-header ' + this.props.groupInfo.sportType;
+	      return _react2.default.createElement(
+	        'li',
+	        { className: 'app-groupCard' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: classes },
+	          _react2.default.createElement(
+	            'ul',
+	            { className: 'rating' },
+	            this.generateRating(1)
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'group-name' },
+	            this.props.groupInfo.groupName
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            { className: 'group-moto' },
+	            this.props.groupInfo.groupMoto
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'p',
+	          { className: 'description' },
+	          this.props.groupInfo.description
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'badges' },
+	          _react2.default.createElement('svg', { className: 'heart-selected' }),
+	          _react2.default.createElement('svg', { className: 'sport running' })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return GroupCard;
+	}(_react.Component);
+
+	exports.default = GroupCard;
+
+/***/ },
+/* 259 */
+/***/ function(module, exports, __webpack_require__) {
+
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(259);
+	var content = __webpack_require__(260);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(253)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./groupCard.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./groupCard.scss");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(252)();
+	// imports
+	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
+
+	// module
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  background: #f7f7f7;\n  color: rgba(0, 0, 0, 0.87); }\n\n.small-link {\n  color: #f7f7f7;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-groupCard {\n  position: relative;\n  display: inline-block;\n  background-color: #fff;\n  color: #1f1f1f;\n  height: 220px;\n  width: 246px;\n  margin: 20px 20px 10px 0;\n  vertical-align: top;\n  border: 1px solid #e5e5e5;\n  border-radius: 2px; }\n  .app-groupCard .groupImage {\n    width: 244px;\n    height: 90px;\n    display: block; }\n  .app-groupCard .description {\n    overflow: hidden;\n    text-align: right;\n    padding: 4px 10px;\n    text-overflow: ellipsis;\n    width: 230px;\n    display: inline-block;\n    direction: rtl;\n    float: right;\n    clear: both; }\n  .app-groupCard .card-header {\n    display: inline-block;\n    width: 244px;\n    height: 90px; }\n    .app-groupCard .card-header .group-name {\n      color: #fff;\n      text-align: right;\n      font-size: 20px;\n      padding: 0 10px;\n      text-shadow: 2px 2px #000;\n      margin: 0; }\n    .app-groupCard .card-header .group-moto {\n      color: #ccc;\n      text-align: right;\n      font-size: 16px;\n      padding: 0 13px;\n      text-shadow: 2px 2px #000; }\n    .app-groupCard .card-header.swimming {\n      background: url(" + __webpack_require__(261) + ") 0 0; }\n    .app-groupCard .card-header.bicycle {\n      background: url(" + __webpack_require__(261) + ") -244px 0; }\n    .app-groupCard .card-header.triatlon {\n      background: url(" + __webpack_require__(261) + ") 244px 0; }\n    .app-groupCard .card-header.running {\n      background: url(" + __webpack_require__(261) + ") 0 -90px; }\n    .app-groupCard .card-header.tennis {\n      background: url(" + __webpack_require__(261) + ") -244px -90px; }\n    .app-groupCard .card-header.judo {\n      background: url(" + __webpack_require__(261) + ") 244px -90px; }\n    .app-groupCard .card-header.soccer {\n      background: url(" + __webpack_require__(261) + ") 0 -180px; }\n    .app-groupCard .card-header.surf {\n      background: url(" + __webpack_require__(261) + ") -244px -180px; }\n    .app-groupCard .card-header.yoga {\n      background: url(" + __webpack_require__(261) + ") 244px -180px; }\n    .app-groupCard .card-header.basketball {\n      background: url(" + __webpack_require__(261) + ") 0 -270px; }\n    .app-groupCard .card-header.sap {\n      background: url(" + __webpack_require__(261) + ") -244px -270px; }\n    .app-groupCard .card-header.pilatis {\n      background: url(" + __webpack_require__(261) + ") 244px -270px; }\n    .app-groupCard .card-header.walking {\n      background: url(" + __webpack_require__(261) + ") 0 -360px; }\n    .app-groupCard .card-header.kickboxing {\n      background: url(" + __webpack_require__(261) + ") -244px -360px; }\n    .app-groupCard .card-header.trx {\n      background: url(" + __webpack_require__(261) + ") 244px -360px; }\n  .app-groupCard .rating {\n    padding: 8px 15px 0 15px; }\n    .app-groupCard .rating li {\n      display: inline-block;\n      padding-right: 6px; }\n      .app-groupCard .rating li i {\n        display: inline-block;\n        background-image: url(" + __webpack_require__(262) + ");\n        width: 16px;\n        height: 16px; }\n  .app-groupCard .badges {\n    position: absolute;\n    bottom: 0;\n    padding: 8px 13px; }\n    .app-groupCard .badges svg, .app-groupCard .badges i {\n      display: inline-block;\n      width: 30px;\n      height: 30px; }\n    .app-groupCard .badges .heart {\n      background: url(" + __webpack_require__(263) + ") no-repeat; }\n    .app-groupCard .badges .heart-selected {\n      background: url(" + __webpack_require__(264) + ") no-repeat; }\n    .app-groupCard .badges .sport .running {\n      background: url(" + __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../images/sportTypes/sportTypes.svg\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())) + ") no-repeat; }\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "81cb2e743e366c254bec3b8f79895d97.jpg";
+
+/***/ },
+/* 262 */
+/***/ function(module, exports) {
+
+	module.exports = "\"data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='iso-8859-1'?%3E %3C!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 501.28 501.28' style='enable-background:new 0 0 501.28 501.28;' xml:space='preserve'%3E %3Cg%3E %3Cpolygon style='fill:%23FFCD00;' points='501.28,194.37 335.26,159.33 250.64,12.27 250.64,419.77 405.54,489.01 387.56,320.29 '/%3E %3Cpolygon style='fill:%23FFDA44;' points='166.02,159.33 0,194.37 113.72,320.29 95.74,489.01 250.64,419.77 250.64,12.27 '/%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3C/svg%3E\""
+
+/***/ },
+/* 263 */
+/***/ function(module, exports) {
+
+	module.exports = "\"data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='iso-8859-1'?%3E %3C!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 64 64' style='enable-background:new 0 0 64 64;' xml:space='preserve'%3E %3Cg%3E %3Cg%3E %3Cpath d='M48,3.922c-7.357,0-13.639,4.146-16,9.929c-2.361-5.783-8.643-9.929-16-9.929c-10.015,0-16,8.644-16,17 c0,8.589,5.326,17.755,15.83,27.242c7.738,6.989,15.59,11.577,15.668,11.623L32,60.078l0.502-0.291 c0.079-0.046,7.93-4.634,15.668-11.623C58.674,38.677,64,29.511,64,20.922C64,12.566,58.015,3.922,48,3.922z M32,57.755 C28.031,55.332,2,38.75,2,20.922c0-7.373,5.237-15,14-15c7.214,0,15,4.971,15,13h2c0-8.029,7.786-13,15-13c8.763,0,14,7.627,14,15 C62,38.74,35.968,55.331,32,57.755z'/%3E %3C/g%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3C/svg%3E\""
+
+/***/ },
+/* 264 */
+/***/ function(module, exports) {
+
+	module.exports = "\"data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='iso-8859-1'?%3E %3C!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E %3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 495 495' style='enable-background:new 0 0 495 495;' xml:space='preserve'%3E %3Cg%3E %3Cpath style='fill:%23C70024;' d='M362.96,14.24c-49.72,0-92.95,27.53-115.46,68.13v398.39C284.67,452.84,495,288.55,495,146.28 C495,73.36,435.88,14.24,362.96,14.24z'/%3E %3Cpath style='fill:%23FF0C38;' d='M132.04,14.24C59.12,14.24,0,73.36,0,146.28c0,142.26,210.33,306.55,247.5,334.48V82.37 C224.99,41.77,181.76,14.24,132.04,14.24z'/%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3Cg%3E %3C/g%3E %3C/svg%3E\""
+
+/***/ },
+/* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(266);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(253)(content, {});
@@ -27894,7 +28110,7 @@
 	}
 
 /***/ },
-/* 259 */
+/* 266 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(252)();
@@ -27902,13 +28118,13 @@
 	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  background: #f7f7f7;\n  color: rgba(0, 0, 0, 0.87); }\n\n.small-link {\n  color: #f7f7f7;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-groups ul {\n  list-style: none;\n  direction: ltr; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 260 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27923,7 +28139,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _SearchForm = __webpack_require__(261);
+	var _SearchForm = __webpack_require__(268);
 
 	var _SearchForm2 = _interopRequireDefault(_SearchForm);
 
@@ -27935,7 +28151,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(265);
+	__webpack_require__(271);
 
 	var Search = function (_Component) {
 	  _inherits(Search, _Component);
@@ -27963,7 +28179,7 @@
 	exports.default = Search;
 
 /***/ },
-/* 261 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27973,10 +28189,6 @@
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _cities = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../jsonData/cities.json\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-	var _cities2 = _interopRequireDefault(_cities);
 
 	var _react = __webpack_require__(1);
 
@@ -27990,7 +28202,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(263);
+	__webpack_require__(269);
 
 	var SearchForm = function (_Component) {
 	  _inherits(SearchForm, _Component);
@@ -28002,14 +28214,12 @@
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SearchForm).call(this, props));
 
 	    _this.state = { term: '' };
-	    debugger;
 	    return _this;
 	  }
 
 	  _createClass(SearchForm, [{
 	    key: 'onInputChange',
 	    value: function onInputChange(event) {
-	      debugger;
 	      this.setState({ term: event.target.value });
 	      console.log(event.target.value);
 	    }
@@ -28024,26 +28234,133 @@
 	          { className: 'app-search-form-inner' },
 	          _react2.default.createElement(
 	            'select',
+	            { dir: 'rtl', className: 'category' },
+	            _react2.default.createElement(
+	              'option',
+	              { value: '', disabled: true, selected: true },
+	              'קטגוריה'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'ריצה'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'שחיה'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'הליכה'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'הכל'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'select',
 	            { dir: 'rtl' },
 	            _react2.default.createElement(
 	              'option',
 	              { value: '', disabled: true, selected: true },
-	              'מין'
+	              'עיר'
 	            ),
 	            _react2.default.createElement(
 	              'option',
 	              null,
-	              'בנים'
+	              'פרדס חנה'
 	            ),
 	            _react2.default.createElement(
 	              'option',
 	              null,
-	              'בנות'
+	              'כרכור'
 	            ),
 	            _react2.default.createElement(
 	              'option',
 	              null,
-	              'מעורב'
+	              'נתניה'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { dir: 'rtl' },
+	            _react2.default.createElement(
+	              'option',
+	              { value: '', disabled: true, selected: true },
+	              'סוג הקבוצה'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'מותאם אישית'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'אחרי הריון'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'להזיז קצת את הגוף'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'חוזרים לכושר'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'תחרותי'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              'הכל'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'select',
+	            { dir: 'rtl' },
+	            _react2.default.createElement(
+	              'option',
+	              { value: '', disabled: true, selected: true },
+	              'גודל הקבוצה'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '1-5'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '5-10'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '10-20'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '20-40'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '40-100'
+	            ),
+	            _react2.default.createElement(
+	              'option',
+	              null,
+	              '100+'
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -28111,119 +28428,22 @@
 	            _react2.default.createElement(
 	              'option',
 	              { value: '', disabled: true, selected: true },
-	              'גודל הקבוצה'
+	              'מין'
 	            ),
 	            _react2.default.createElement(
 	              'option',
 	              null,
-	              '1-5'
+	              'בנים'
 	            ),
 	            _react2.default.createElement(
 	              'option',
 	              null,
-	              '5-10'
+	              'בנות'
 	            ),
 	            _react2.default.createElement(
 	              'option',
 	              null,
-	              '10-20'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              '20-40'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              '40-80'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              '80-120'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'select',
-	            { dir: 'rtl' },
-	            _react2.default.createElement(
-	              'option',
-	              { value: '', disabled: true, selected: true },
-	              'סוג הקבוצה'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              'מותאם אישית'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              'אחרי הריון'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              'להזיז קצת את הגוף'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              'חוזרים לכושר'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              'תחרותי'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'select',
-	            { dir: 'rtl' },
-	            _react2.default.createElement(
-	              'option',
-	              { value: '', disabled: true, selected: true },
-	              'עיר'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              'פרדס חנה'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              'כרכור'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              'נתניה'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'select',
-	            { dir: 'rtl', className: 'category' },
-	            _react2.default.createElement(
-	              'option',
-	              { value: '', disabled: true, selected: true },
-	              'קטגוריה'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              'ריצה'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              'שחיה'
-	            ),
-	            _react2.default.createElement(
-	              'option',
-	              null,
-	              'הליכה'
+	              'מעורב'
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -28242,14 +28462,13 @@
 	exports.default = SearchForm;
 
 /***/ },
-/* 262 */,
-/* 263 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(264);
+	var content = __webpack_require__(270);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(253)(content, {});
@@ -28269,7 +28488,7 @@
 	}
 
 /***/ },
-/* 264 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(252)();
@@ -28277,19 +28496,19 @@
 	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-search-form-inner {\n  position: relative;\n  top: 415px;\n  background-color: rgba(0, 0, 0, 0.6);\n  padding: 10px; }\n  .app-search-form-inner select {\n    border: 1px solid #ccc;\n    -webkit-appearance: manulist-button;\n    height: 30px;\n    font-size: 16px;\n    margin-left: 10px; }\n  .app-search-form-inner .app-input-text {\n    border-radius: 3px;\n    border: 0;\n    padding: 5px 10px;\n    width: 250px;\n    margin: 25px 10px;\n    direction: rtl; }\n  .app-search-form-inner input[type=\"text\"], .app-search-form-inner input[type=\"number\"] {\n    font-size: 16px;\n    font-family: inherit;\n    margin-left: 10px;\n    border-radius: 3px;\n    padding: 3px 10px;\n    border: 0; }\n  .app-search-form-inner input[type=\"number\"] {\n    width: 118px; }\n  .app-search-form-inner .small-button {\n    background-color: #9966CC;\n    font-size: 16px; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  background: #f7f7f7;\n  color: rgba(0, 0, 0, 0.87); }\n\n.small-link {\n  color: #f7f7f7;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-search-form-inner {\n  direction: rtl;\n  position: relative;\n  top: 415px;\n  background-color: rgba(0, 0, 0, 0.6);\n  padding: 10px; }\n  .app-search-form-inner select {\n    border: 1px solid #ccc;\n    -webkit-appearance: manulist-button;\n    height: 30px;\n    font-size: 16px;\n    margin-left: 10px; }\n  .app-search-form-inner .app-input-text {\n    border-radius: 3px;\n    border: 0;\n    padding: 5px 10px;\n    width: 250px;\n    margin: 25px 10px;\n    direction: rtl; }\n  .app-search-form-inner input[type=\"text\"], .app-search-form-inner input[type=\"number\"] {\n    font-size: 16px;\n    font-family: inherit;\n    margin-left: 10px;\n    border-radius: 3px;\n    padding: 3px 10px;\n    border: 0; }\n  .app-search-form-inner input[type=\"number\"] {\n    width: 118px; }\n  .app-search-form-inner .small-button {\n    background-color: #9966CC;\n    font-size: 16px; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 265 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(266);
+	var content = __webpack_require__(272);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(253)(content, {});
@@ -28309,7 +28528,7 @@
 	}
 
 /***/ },
-/* 266 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(252)();
@@ -28317,13 +28536,13 @@
 	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  .app-search {\n    font-size: 25px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  .app-search {\n    color: rgba(0, 0, 0, 0.87);\n    background-image: url(\"/images/running.jpg\");\n    height: 465px; } }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  background: #f7f7f7;\n  color: rgba(0, 0, 0, 0.87); }\n\n.small-link {\n  color: #f7f7f7;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  .app-search {\n    font-size: 25px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  .app-search {\n    color: rgba(0, 0, 0, 0.87);\n    background-image: url(\"/images/running.jpg\");\n    height: 465px; } }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 267 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28348,7 +28567,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	__webpack_require__(268);
+	__webpack_require__(274);
 
 	var Footer = function (_Component) {
 	  _inherits(Footer, _Component);
@@ -28429,13 +28648,13 @@
 	exports.default = Footer;
 
 /***/ },
-/* 268 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(269);
+	var content = __webpack_require__(275);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(253)(content, {});
@@ -28455,7 +28674,7 @@
 	}
 
 /***/ },
-/* 269 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(252)();
@@ -28463,19 +28682,19 @@
 	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-footer {\n  position: fixed;\n  width: 100%;\n  bottom: 0;\n  background-color: #1f1f1f;\n  padding: 10px 10px;\n  color: #f1f1f1;\n  height: 40px; }\n  .app-footer .copy-rights {\n    display: inline-block;\n    padding-left: 10px; }\n  .app-footer .link-list {\n    list-style-type: none;\n    display: inline-block;\n    float: right; }\n    .app-footer .link-list li {\n      display: inline-block;\n      padding: 0px 15px; }\n    .app-footer .link-list li:not(:first-child) {\n      border-left-width: 1px;\n      border-left-color: #fff;\n      border-left-style: solid; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  background: #f7f7f7;\n  color: rgba(0, 0, 0, 0.87); }\n\n.small-link {\n  color: #f7f7f7;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n\n.app-footer {\n  width: 100%;\n  bottom: 0;\n  background-color: #1f1f1f;\n  padding: 10px 10px;\n  color: #f7f7f7;\n  height: 40px; }\n  .app-footer .copy-rights {\n    display: inline-block;\n    padding-left: 10px; }\n  .app-footer .link-list {\n    list-style-type: none;\n    display: inline-block;\n    float: right; }\n    .app-footer .link-list li {\n      display: inline-block;\n      padding: 0px 15px; }\n    .app-footer .link-list li:not(:first-child) {\n      border-left-width: 1px;\n      border-left-color: #fff;\n      border-left-style: solid; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 270 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(271);
+	var content = __webpack_require__(277);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(253)(content, {});
@@ -28495,7 +28714,7 @@
 	}
 
 /***/ },
-/* 271 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(252)();
@@ -28503,13 +28722,13 @@
 	exports.push([module.id, "@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);", ""]);
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87);\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n@media only screen and (min-device-width: 482px) {\n  body {\n    background: #f1f1f1;\n    color: rgba(0, 0, 0, 0.87); } }\n\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  direction: rtl; }\n\n.small-link {\n  color: #f1f1f1;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: \"Open-Sans\";\n  src: url(\"/fonts/OpenSansHebrew-Bold.ttf\") format(\"truetype\"); }\n\n/* phone */\n@media only screen and (max-device-width: 480px) {\n  body {\n    font-size: 25px;\n    background-image: url(\"/images/background.jpg\");\n    background-repeat: no-repeat;\n    background-size: 100% 1000px; } }\n\n/* desktop */\n/* General configurations */\nbody {\n  font-family: 'Open Sans Hebrew', sans-serif;\n  background: #f7f7f7;\n  color: rgba(0, 0, 0, 0.87); }\n\n.small-link {\n  color: #f7f7f7;\n  font-family: inherit;\n  transition: color 0.2s ease; }\n  .small-link:hover {\n    color: #00b22d;\n    text-decoration: none; }\n\na:hover {\n  text-decoration: none; }\n\n/* general components */\n.small-button {\n  background-color: #00b22d;\n  font-size: 13px;\n  font-weight: 700;\n  padding: 6px 12px 7px 12px;\n  line-height: 13px;\n  color: #fff;\n  -webkit-border-radius: 4px;\n  -moz-border-radius: 4px;\n  border-radius: 4px; }\n  .small-button:hover {\n    color: #fff; }\n\n.app-input-text {\n  border-radius: 3px;\n  border: 0;\n  padding: 5px 10px;\n  width: 350px;\n  direction: rtl; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 272 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28532,7 +28751,7 @@
 
 	var _Categories2 = _interopRequireDefault(_Categories);
 
-	var _Footer = __webpack_require__(267);
+	var _Footer = __webpack_require__(273);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -28577,7 +28796,7 @@
 	exports.default = AboutPage;
 
 /***/ },
-/* 273 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28600,7 +28819,7 @@
 
 	var _Categories2 = _interopRequireDefault(_Categories);
 
-	var _Footer = __webpack_require__(267);
+	var _Footer = __webpack_require__(273);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -28651,7 +28870,7 @@
 	exports.default = CategoryPage;
 
 /***/ },
-/* 274 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28674,7 +28893,7 @@
 
 	var _Categories2 = _interopRequireDefault(_Categories);
 
-	var _Footer = __webpack_require__(267);
+	var _Footer = __webpack_require__(273);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -28719,7 +28938,7 @@
 	exports.default = ContactUsPage;
 
 /***/ },
-/* 275 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28742,7 +28961,7 @@
 
 	var _Categories2 = _interopRequireDefault(_Categories);
 
-	var _Footer = __webpack_require__(267);
+	var _Footer = __webpack_require__(273);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -28787,7 +29006,7 @@
 	exports.default = CollaborationsPage;
 
 /***/ },
-/* 276 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28810,7 +29029,7 @@
 
 	var _Categories2 = _interopRequireDefault(_Categories);
 
-	var _Footer = __webpack_require__(267);
+	var _Footer = __webpack_require__(273);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -28855,7 +29074,7 @@
 	exports.default = ManageGroups;
 
 /***/ },
-/* 277 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28878,7 +29097,7 @@
 
 	var _Categories2 = _interopRequireDefault(_Categories);
 
-	var _Footer = __webpack_require__(267);
+	var _Footer = __webpack_require__(273);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
@@ -28923,7 +29142,7 @@
 	exports.default = PrivacyPage;
 
 /***/ },
-/* 278 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28946,7 +29165,7 @@
 
 	var _Categories2 = _interopRequireDefault(_Categories);
 
-	var _Footer = __webpack_require__(267);
+	var _Footer = __webpack_require__(273);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 

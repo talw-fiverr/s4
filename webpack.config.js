@@ -22,6 +22,10 @@ module.exports = {
         loader: 'url-loader?limit=20000'
       },
       {
+        test: /\.svg$/,
+        loader: 'svg-url-loader'
+      },
+      {
         test: /\.scss$/,
         exclude: /(node_modules)/,
         loader: 'style-loader!css-loader!sass-loader'

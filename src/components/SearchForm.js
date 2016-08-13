@@ -18,11 +18,36 @@ export default class SearchForm extends Component {
     return (
       <div>
         <div className="app-search-form-inner">
+          <select dir="rtl" className="category">
+            <option value="" disabled selected>קטגוריה</option>
+            <option>ריצה</option>
+            <option>שחיה</option>
+            <option>הליכה</option>
+            <option>הכל</option>
+          </select>
           <select dir="rtl">
-            <option value="" disabled selected>מין</option>
-            <option>בנים</option>
-            <option>בנות</option>
-            <option>מעורב</option>
+            <option value="" disabled selected>עיר</option>
+            <option>פרדס חנה</option>
+            <option>כרכור</option>
+            <option>נתניה</option>
+          </select>
+          <select dir="rtl">
+            <option value="" disabled selected>סוג הקבוצה</option>
+            <option>מותאם אישית</option>
+            <option>אחרי הריון</option>
+            <option>להזיז קצת את הגוף</option>
+            <option>חוזרים לכושר</option>
+            <option>תחרותי</option>
+            <option>הכל</option>
+          </select>
+          <select dir="rtl">
+            <option value="" disabled selected>גודל הקבוצה</option>
+            <option>1-5</option>
+            <option>5-10</option>
+            <option>10-20</option>
+            <option>20-40</option>
+            <option>40-100</option>
+            <option>100+</option>
           </select>
           <select dir="rtl">
             <option value="" disabled selected>טווח גילאים</option>
@@ -38,33 +63,10 @@ export default class SearchForm extends Component {
             <option>65-75</option>
           </select>
           <select dir="rtl">
-            <option value="" disabled selected>גודל הקבוצה</option>
-            <option>1-5</option>
-            <option>5-10</option>
-            <option>10-20</option>
-            <option>20-40</option>
-            <option>40-80</option>
-            <option>80-120</option>
-          </select>
-          <select dir="rtl">
-            <option value="" disabled selected>סוג הקבוצה</option>
-            <option>מותאם אישית</option>
-            <option>אחרי הריון</option>
-            <option>להזיז קצת את הגוף</option>
-            <option>חוזרים לכושר</option>
-            <option>תחרותי</option>
-          </select>
-          <select dir="rtl">
-            <option value="" disabled selected>עיר</option>
-            <option>פרדס חנה</option>
-            <option>כרכור</option>
-            <option>נתניה</option>
-          </select>
-          <select dir="rtl" className="category">
-            <option value="" disabled selected>קטגוריה</option>
-            <option>ריצה</option>
-            <option>שחיה</option>
-            <option>הליכה</option>
+            <option value="" disabled selected>מין</option>
+            <option>בנים</option>
+            <option>בנות</option>
+            <option>מעורב</option>
           </select>
           {/*<input
             type="text"
