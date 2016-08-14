@@ -5,12 +5,21 @@
   display: inline-block;
   background-color: $white;
   color: #1f1f1f;
-  height: 220px;
-  width: 246px;
+  height: 290px;
+  width: 245px;
   margin: 20px 20px 10px 0;
   vertical-align: top;
   border: 1px solid #e5e5e5;
   border-radius: 2px;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  .info-section {
+    padding: 0 10px;
+  }
 
   .groupImage {
     width: 244px;
@@ -22,9 +31,10 @@
     // TODO: limit the description
     overflow: hidden;
     text-align: right;
-    padding: 4px 10px;
     text-overflow: ellipsis;
     width: 230px;
+    height: 57px;
+    margin: 10px 0 6px 0;
     display: inline-block;
     direction: rtl;
     float: right;
@@ -124,9 +134,26 @@
     }
   }
 
+  .group-info {
+    float: right;
+    direction: rtl;
+    color: $strongGray;
+
+
+    .subject {
+      width: 67px;
+      text-align: right;
+    }
+    .subject-value {
+      width: 144px;
+      text-align: right;
+    }
+  }
+
   // - - - BADGES  & rating - - - //
   .rating {
     padding: 8px 15px 0 15px;
+    height: 29px;
 
     li {
       display: inline-block;

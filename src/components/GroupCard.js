@@ -1,6 +1,6 @@
 require('../style/groupCard.scss');
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 
 export default class GroupCard extends Component {
   constructor(props) {
@@ -21,19 +21,38 @@ export default class GroupCard extends Component {
     const badgesClasses = `sport ${this.props.groupInfo.sportType}`;
     return (
         <li className="app-groupCard">
-          <div className={headerClasses}>
-
-            <ul className="rating">
-              {this.generateRating(1)}
-            </ul>
-            <p className="group-name">{this.props.groupInfo.groupName}</p>
-            <p className="group-moto">{this.props.groupInfo.groupMoto}</p>
-          </div>
-          <p className="description">{this.props.groupInfo.description}</p>
-          <div className="badges">
-            <svg className={badgesClasses}/>
-            <svg className="heart-selected"/>
-          </div>
+          <Link to={`/group/${this.props.groupInfo.id}`}>
+            <div className={headerClasses}>
+              <ul className="rating">
+                {this.generateRating(1)}
+              </ul>
+              <p className="group-name">{this.props.groupInfo.groupName}</p>
+              <p className="group-moto">{this.props.groupInfo.groupMoto}</p>
+            </div>
+            <div className="info-section">
+              <p className="description">{this.props.groupInfo.description}</p>
+              <table className="group-info">
+                <tbody>
+                  <tr>
+                    <td className="subject">עיר:</td>
+                    <td className="subject-value">{this.props.groupInfo.city}</td>
+                  </tr>
+                  <tr>
+                    <td className="subject">גילאים:</td>
+                    <td className="subject-value">{this.props.groupInfo.ageRange}</td>
+                  </tr>
+                  <tr>
+                    <td className="subject">גודל:</td>
+                    <td className="subject-value">{this.props.groupInfo.groupMaxSize}/{this.props.groupInfo.groupCurrentSize}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="badges">
+              <svg className={badgesClasses}/>
+              <svg className="heart-selected"/>
+            </div>
+          </Link>
         </li>
     );
   }

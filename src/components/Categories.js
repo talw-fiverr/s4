@@ -1,6 +1,6 @@
 require('../style/categories.scss');
 import React, { Component } from 'react';
-import { Router, Route, Link } from 'react-router'
+import { Router, Route, Link } from 'react-router';
 
 var sportTypes =[{
     key: 'running',
