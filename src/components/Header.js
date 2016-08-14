@@ -1,6 +1,6 @@
 require('../style/header.scss');
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 
 export default class Header extends Component {
   render() {
@@ -8,7 +8,7 @@ export default class Header extends Component {
       <div className="app-header">
         <div className="app-logo">
           <Link to={`/`}>
-            <img src="./images/sports-logo.png"></img>
+            <i className="siteLogo"></i>
           </Link>
         </div>
         <ul>

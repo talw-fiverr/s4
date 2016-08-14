@@ -13,6 +13,7 @@ import CollaborationsPage   from './pages/CollaborationsPage';
 import ManageGroupsPage     from './pages/ManageGroupsPage';
 import PrivacyPage          from './pages/PrivacyPage';
 import QaPage               from './pages/QaPage';
+import GroupPage            from './pages/GroupPage';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -25,14 +26,15 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 ReactDOM.render((
   <Router history={browserHistory}>
-    <Route path="/"                 component={App}></Route>
-    <Route path="/About"            component={AboutPage}></Route>
-    <Route path="/Collaborations"   component={CollaborationsPage}></Route>
-    <Route path="/Category/*"       component={CategoryPage}></Route>
-    <Route path="/ContactUs"        component={ContactUsPage}></Route>
-    <Route path="/ManageGroups"     component={ManageGroupsPage}></Route>
-    <Route path="/Privacy"          component={PrivacyPage}></Route>
-    <Route path="/Qa"               component={QaPage}></Route>
+    <Route path="/"                     component={App}></Route>
+    <Route path="/About"                component={AboutPage}></Route>
+    <Route path="/Collaborations"       component={CollaborationsPage}></Route>
+    <Route path="/Category/*"           component={CategoryPage}></Route>
+    <Route path="/ContactUs"            component={ContactUsPage}></Route>
+    <Route path="/ManageGroups"         component={ManageGroupsPage}></Route>
+    <Route path="/Privacy"              component={PrivacyPage}></Route>
+    <Route path="/Qa"                   component={QaPage}></Route>
+    <Route path="/group/*"              component={GroupPage}></Route>
   </Router>
 ), document.querySelector('.app-container'))
 

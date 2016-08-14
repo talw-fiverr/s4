@@ -1,6 +1,6 @@
 require('../style/footer.scss');
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+import { Link } from 'react-router';
 
 export default class Footer extends Component {
   render() {

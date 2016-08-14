@@ -11,6 +11,13 @@
     font-size:18px;
     padding: 10px 20px;
     display: inline-block;
+
+    .siteLogo {
+      background: url('../images/sports-logo.png') no-repeat;
+      width: 200px;
+      height: 42px;
+      display: inline-block;
+    }
   }
 
   ul {
