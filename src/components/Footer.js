@@ -8,11 +8,11 @@ export default class Footer extends Component {
       <div className="app-footer">
         <div className="copy-rights">&copy; SportGroups</div>
         <ul className="link-list">
-          <li><Link to={`/QA`}>שאלות ותשובות</Link></li>
+          <li><Link to={`/qa`}>שאלות ותשובות</Link></li>
           <li><Link to={`/privacy`}>מדיניות פרטיות</Link></li>
           <li><Link to={`/collaborations`}>שיתופי פעולה</Link></li>
           <li><Link to={`/about`}>עלינו</Link></li>
-          <li><Link to={`/contactUs`}>צור קשר</Link></li>
+          <li><Link to={`/contact-us`}>צור קשר</Link></li>
         </ul>
       </div>
     );

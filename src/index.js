@@ -29,15 +29,15 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 ReactDOM.render((
   <Router history={browserHistory}>
     <Route path="/"                     component={App}></Route>
-    <Route path="/About"                component={AboutPage}></Route>
-    <Route path="/Collaborations"       component={CollaborationsPage}></Route>
-    <Route path="/Category/*"           component={CategoryPage}></Route>
-    <Route path="/ContactUs"            component={ContactUsPage}></Route>
-    <Route path="/ManageGroups"         component={ManageGroupsPage}></Route>
-    <Route path="/Privacy"              component={PrivacyPage}></Route>
-    <Route path="/Qa"                   component={QaPage}></Route>
+    <Route path="/about"                component={AboutPage}></Route>
+    <Route path="/collaborations"       component={CollaborationsPage}></Route>
+    <Route path="/category/*"           component={CategoryPage}></Route>
+    <Route path="/contact-us"            component={ContactUsPage}></Route>
+    <Route path="/manage-groups"         component={ManageGroupsPage}></Route>
+    <Route path="/privacy"              component={PrivacyPage}></Route>
+    <Route path="/qa"                   component={QaPage}></Route>
     <Route path="/group/*"              component={GroupPage}></Route>
-    <Route path="/Login"                component={LoginPage}></Route>
+    <Route path="/login"                component={LoginPage}></Route>
     <Route path="/create-new-group"     component={CreateNewGroup}></Route>
   </Router>
 ), document.querySelector('.app-container'))

@@ -23,6 +23,7 @@ export default class CreateNewGroup extends Component {
           <form>
             <label>שם הקבוצה:</label>
             <input
+              type="text"
               value={this.state.groupName}
               onChange={event => this.setState({ groupName: event.target.value })}
             />

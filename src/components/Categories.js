@@ -18,7 +18,7 @@ export default class Categories extends Component {
           {/*{this.sportTypes.map(category => (
             <li key={category.key}><Link to={`/categoryPage/${category.key}`}>{category.name}</Link></li>
           ))}*/}
-          <li><Link to={`/categoryPage/running`}>ריצה</Link></li>
+          <li><Link to={`/category/running`}>ריצה</Link></li>
           <li><a href="!#">הליכה</a></li>
           <li><a href="!#">שחיה</a></li>
           <li><a href="!#">אופנים</a></li>
