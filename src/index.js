@@ -32,8 +32,8 @@ ReactDOM.render((
     <Route path="/about"                component={AboutPage}></Route>
     <Route path="/collaborations"       component={CollaborationsPage}></Route>
     <Route path="/category/*"           component={CategoryPage}></Route>
-    <Route path="/contact-us"            component={ContactUsPage}></Route>
-    <Route path="/manage-groups"         component={ManageGroupsPage}></Route>
+    <Route path="/contact-us"           component={ContactUsPage}></Route>
+    <Route path="/manage-groups"        component={ManageGroupsPage}></Route>
     <Route path="/privacy"              component={PrivacyPage}></Route>
     <Route path="/qa"                   component={QaPage}></Route>
     <Route path="/group/*"              component={GroupPage}></Route>
