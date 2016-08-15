@@ -1,0 +1,47 @@
+@import "siteConfig";
+
+.app-register {
+  background: url('../images/light-background.jpg');
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  .register-form {
+    background-color: $white;
+    max-width: 700px;
+    height: 350px;
+    border: 1px solid $gray;
+    margin: 40px auto;
+    border-radius: 3px;
+    direction: rtl;
+    padding: 20px;
+
+    table {
+      tr {
+        td {
+          padding-bottom: 10px;
+
+          &.btn-container {
+            position: relative;
+          }
+
+          label {
+            padding-left: 10px;
+            font-weight: 500;
+          }
+        }
+
+
+      }
+
+    }
+
+    .register-btn {
+      width: 100%;
+      position: absolute;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@import "siteConfig";
+
+.popover-content {
+  width: 265px;
+}
+
+.app-login {
+
+  .login-form {
+    background-color: $white;
+    height: 103px;
+    direction: rtl;
+
+    table {
+      tr {
+        td {
+          padding-bottom: 10px;
+
+          &.btn-container {
+            position: relative;
+          }
+
+          label {
+            padding-left: 10px;
+            font-weight: 500;
+          }
+        }
+
+
+      }
+
+    }
+
+    .login-btn {
+      width: 100%;
+      position: absolute;
+      text-align: center;
+    }
+  }
+}

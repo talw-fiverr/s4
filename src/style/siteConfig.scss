@@ -37,8 +37,8 @@ $strongGray:   #999999;
 body {
   font-family: 'Open Sans Hebrew', sans-serif;
   background: $light-gray;
+  background: url('../images/light-background.jpg');
   color: rgba(0,0,0,0.87);
-  //direction: rtl;
 }
 
 .small-link {
@@ -79,4 +79,8 @@ a:hover {
   padding: 5px 10px;
   width: 350px;
   direction: rtl;
+}
+
+.hidden {
+  display: none;
 }

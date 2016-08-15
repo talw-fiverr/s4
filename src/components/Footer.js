@@ -3,9 +3,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 export default class Footer extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    const footerClasses = `app-footer ${this.props.position}`;
+
     return (
-      <div className="app-footer">
+      <div className={footerClasses}>
         <div className="copy-rights">&copy; SportGroups</div>
         <ul className="link-list">
           <li><Link to={`/qa`}>שאלות ותשובות</Link></li>
