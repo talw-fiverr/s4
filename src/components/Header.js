@@ -11,9 +11,7 @@ export default class Header extends Component {
             <i className="siteLogo"></i>
           </Link>
         </div>
-        <ul>
-          <li><a className="small-button" href="!#">התחבר</a></li>
-        </ul>
+        <Link className="small-button" to={'/login'}>התחבר</Link>
       </div>
     );
   }

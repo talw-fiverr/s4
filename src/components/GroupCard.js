@@ -20,7 +20,7 @@ export default class GroupCard extends Component {
     const headerClasses = `card-header ${this.props.groupInfo.sportType}`;
     const badgesClasses = `sport ${this.props.groupInfo.sportType}`;
     return (
-        <li className="app-groupCard">
+        <li className="app-groupCard" onClick={() => this.props.onSelectedGroup(this.props.groupInfo)}>
           <Link to={`/group/${this.props.groupInfo.id}`}>
             <div className={headerClasses}>
               <ul className="rating">

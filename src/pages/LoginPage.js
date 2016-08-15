@@ -5,7 +5,7 @@ import Header from      '../components/Header';
 import Categories from  '../components/Categories';
 import Footer from      '../components/Footer';
 
-export default class ManageGroups extends Component {
+export default class LoginPage extends Component {
   constructor(props) {
     super(props);
   }
@@ -15,10 +15,15 @@ export default class ManageGroups extends Component {
       <div>
         <Header />
         <Categories />
-        <div className="app-manage-group">
-          this is the manage groups page
-          <Link to={`/create-new-group`}>צור קבוצה חדשה</Link>
-        </div>
+        <form className="app-login">
+          <label>שם משתמש:</label>
+          <input type="text"/>
+          <label>סיסמא:</label>
+          <input type="password"/>
+          <br/>
+          <p>או</p>
+          <Link to={`/sign-in`}>הרשם</Link>
+        </form>
         <Footer />
       </div>
     );

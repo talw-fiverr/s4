@@ -10,11 +10,19 @@ export default class Groups extends Component {
   }
 
   render() {
+    if(this.props.groups.length === 0) {
+      return <div>No results</div>;
+    }
+
     return (
       <div className="app-groups">
         <ul>
           {this.state.groups.map((groupInfo) => {
-            return <GroupCard groupInfo={groupInfo} key={groupInfo.id}/>
+            return <GroupCard
+                      groupInfo={groupInfo}
+                      key={groupInfo.id}
+                      onSelectedGroup = {this.props.onSelectedGroup}
+                      />
           })}
         </ul>
       </div>

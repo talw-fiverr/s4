@@ -14,6 +14,8 @@ import ManageGroupsPage     from './pages/ManageGroupsPage';
 import PrivacyPage          from './pages/PrivacyPage';
 import QaPage               from './pages/QaPage';
 import GroupPage            from './pages/GroupPage';
+import LoginPage            from './pages/LoginPage';
+import CreateNewGroup       from './pages/CreateNewGroup';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -35,6 +37,8 @@ ReactDOM.render((
     <Route path="/Privacy"              component={PrivacyPage}></Route>
     <Route path="/Qa"                   component={QaPage}></Route>
     <Route path="/group/*"              component={GroupPage}></Route>
+    <Route path="/Login"                component={LoginPage}></Route>
+    <Route path="/create-new-group"     component={CreateNewGroup}></Route>
   </Router>
 ), document.querySelector('.app-container'))
 

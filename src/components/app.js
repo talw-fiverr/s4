@@ -11,6 +11,8 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      favorites: [],
+      selectedGroup: null,
       groups: [
         {
           description: 'ת קבוצה זו עוסקת בספורט אתגרי, אם אתה תחר קבוצה זו עוסקת בספורט אתגרי, אם אתה תחרותי ומחפש אתגרים מקומך איתנו',
@@ -197,13 +199,20 @@ export default class App extends Component {
     };
   }
 
+  onSelectedGroup(selectedGroup) {
+    this.setState({selectedGroup});
+  }
+
   render() {
     return (
       <div>
         <Header />
         <Categories />
         <Search />
-        <Groups groups={this.state.groups}/>
+        <Groups
+          groups={this.state.groups}
+          onSelectedGroup={this.onSelectedGroup.bind(this)}
+        />
         <Footer />
       </div>
     );
