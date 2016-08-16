@@ -206,7 +206,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header isConnected={true}/>
         <Categories />
         <Search />
         <Groups

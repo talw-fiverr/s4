@@ -6,6 +6,10 @@
   color: white;
   height: 60px;
 
+  > div {
+    display: inline-block;
+  }
+
   .app-logo {
     color: #fff;
     font-size: 18px;
