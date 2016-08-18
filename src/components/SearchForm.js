@@ -1,7 +1,10 @@
 require('../style/appSearchForm.scss');
-
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
-export default class SearchForm extends Component {
+import { searchGroups } from '../actions/index';
+import { bindActionCreators } from 'redux';
+
+class SearchForm extends Component {
 
   // called when a new instance is called
   constructor(props) {
@@ -20,7 +23,12 @@ export default class SearchForm extends Component {
     this.setState({ category: event.target.value });
     console.log(event);
   }
-  //this.onInputChange.bind(this)
+
+  searchGroups(e) {
+    e.preventDefault();
+    console.log('search');
+  }
+
   render() {
     return (
       <div>
@@ -77,9 +85,26 @@ export default class SearchForm extends Component {
             <option value="girls">בנות</option>
             <option value="all">מעורב</option>
           </select>
-          <a href="!#" className="search-btn small-button">חפש</a>
+          {/*<a href="!#" onClick={(e) => this.searchGroups(e)} className="search-btn small-button">חפש</a>*/}
+          <span onClick={() => this.props.searchGroups('tal waserman')} className="search-btn small-button">חפש</span>
         </form>
       </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    search: state.search
+  };
+}
+
+// anything returned from this function will end up as props
+// on SearchForm container
+function mapDispatchToProps(dispatch) {
+  // when searchGroups is called, result is passed to all reducers
+  return bindActionCreators({ searchGroups: searchGroups }, dispatch);
+}
+
+// promote SearchForm from coponent to container
+export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);

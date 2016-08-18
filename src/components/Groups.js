@@ -10,7 +10,7 @@ export default class Groups extends Component {
   }
 
   render() {
-    if(this.props.groups.length === 0) {
+    if (this.props.groups.length === 0) {
       return <div>No results</div>;
     }
 
