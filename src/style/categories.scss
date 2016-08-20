@@ -4,7 +4,7 @@
   height: 30px;
 
   .link-list {
-    background-color: $purple;
+    background-color: $orange;
     width:100%;
     list-style-type: none;
     display: inline-block;
@@ -21,7 +21,7 @@
       }
 
       > a:hover, Link:hover {
-        color: $yellow;
+        color: $black;
       }
     }
 

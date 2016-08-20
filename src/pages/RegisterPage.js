@@ -21,6 +21,8 @@ export default class RegisterPage extends Component {
       <div className="app-register">
         <Header hideLogin="hidden"/>
         <form className="register-form">
+          <h3>צור חשבון חדש</h3>
+          <hr></hr>
           <table>
             <tbody>
               <tr>
@@ -32,13 +34,16 @@ export default class RegisterPage extends Component {
                 <td><input type="password"/></td>
               </tr>
               <tr>
-                <td></td>
-                <td className="btn-container">
-                  <a href="!#" onClick={this.login} className="register-btn small-button">הרשם</a>
-                </td>
+                <td><label>חזור על סיסמא:</label></td>
+                <td><input type="password"/></td>
               </tr>
             </tbody>
           </table>
+          <p className="terms_and_services">
+            <input type="checkbox" name="terms_and_services" value=""> אני מסכים ל <Link to={'/terms-and-conditions'}>תנאי השימוש</Link></input>
+          </p>
+          <hr></hr>
+          <button type="submit" onClick={this.login} className="register-btn small-button">הרשם</button>
         </form>
         <Footer position={'position-bottom'}/>
       </div>

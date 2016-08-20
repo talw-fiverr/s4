@@ -10,13 +10,17 @@
 
   .register-form {
     background-color: $white;
-    max-width: 700px;
+    width: 500px;
     height: 350px;
     border: 1px solid $gray;
     margin: 40px auto;
     border-radius: 3px;
     direction: rtl;
     padding: 20px;
+
+    h3 {
+      margin-top: 10px;
+    }
 
     table {
       tr {
@@ -38,10 +42,16 @@
 
     }
 
+    .terms_and_services {
+      margin-top: 20px;
+      margin-bottom: 38px;
+    }
+
     .register-btn {
-      width: 100%;
-      position: absolute;
-      text-align: center;
+      background-color: $orange;
+      font-size: 16px;
+      padding: 8px 18px;
+      border: 0;
     }
   }
 }

@@ -1,23 +1,23 @@
 require('../style/groups.scss');
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import GroupCard from '../components/GroupCard'
+
 export default class Groups extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      groups: props.groups
-    };
+
   }
 
   render() {
-    if (this.props.groups.length === 0) {
+    if (!this.props.groups) {
       return <div>No results</div>;
     }
 
     return (
       <div className="app-groups">
         <ul>
-          {this.state.groups.map((groupInfo) => {
+          {this.props.groups.map((groupInfo) => {
             return <GroupCard
                       groupInfo={groupInfo}
                       key={groupInfo.id}
@@ -29,3 +29,13 @@ export default class Groups extends Component {
     );
   }
 }
+
+// map reducer state to container props
+function mapStateToProps(state) {
+  return {
+    groups: state.groups
+  };
+}
+
+// promote App from coponent to container
+export default connect(mapStateToProps)(Groups);

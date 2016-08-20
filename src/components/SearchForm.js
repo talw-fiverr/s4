@@ -1,4 +1,4 @@
-require('../style/appSearchForm.scss');
+require('../style/searchForm.scss');
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { searchGroups } from '../actions/index';
@@ -10,12 +10,14 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: 'all',
-      city: 'all',
-      group_level: 'all',
-      group_size: 'all',
-      group_age: 'all',
-      group_sex_type: 'all'
+      searchParams: {
+        category: 'all',
+        city: 'all',
+        group_level: 'all',
+        group_size: 'all',
+        group_age: 'all',
+        group_sex_type: 'all'
+      }
     };
   }
 
@@ -29,10 +31,15 @@ class SearchForm extends Component {
     console.log('search');
   }
 
+  onFormSubmit(e) {
+    e.preventDefault();
+    console.log('from submit');
+  }
+
   render() {
     return (
       <div>
-        <form className="app-search-form-inner">
+        <form className="app-search-form-inner" onSubmit={this.onFormSubmit}>
           <select dir="rtl" className="category" onChange={(event) => this.setState({ category: event.target.value })}>
             <option value="" disabled selected>קטגוריה</option>
             <option value="running">ריצה</option>
@@ -85,8 +92,8 @@ class SearchForm extends Component {
             <option value="girls">בנות</option>
             <option value="all">מעורב</option>
           </select>
-          {/*<a href="!#" onClick={(e) => this.searchGroups(e)} className="search-btn small-button">חפש</a>*/}
-          <span onClick={() => this.props.searchGroups('tal waserman')} className="search-btn small-button">חפש</span>
+          <button type="submit" className="search-btn small-button"> חפש <i className="fa fa-search" aria-hidden="true"></i></button>
+          {/*<span onClick={() => this.props.searchGroups(this.state.searchParams)} className="search-btn small-button">חפש</span>*/}
         </form>
       </div>
     );
@@ -95,7 +102,7 @@ class SearchForm extends Component {
 
 function mapStateToProps(state) {
   return {
-    search: state.search
+    groups: state.groups
   };
 }
 
