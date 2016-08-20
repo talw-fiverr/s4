@@ -85,3 +85,12 @@ a:hover {
 .hidden {
   display: none;
 }
+
+.no-data {
+  text-align: center;
+  color: $black;
+
+  p {
+    font-size: 50px;
+  }
+}

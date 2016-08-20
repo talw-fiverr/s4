@@ -1,6 +1,7 @@
 require('../style/style.scss');
 
 import React, { Component } from 'react';
+
 import Header from      '../components/Header';
 import Categories from  '../components/Categories';
 import Groups from      '../components/Groups';
@@ -12,8 +13,20 @@ export default class App extends Component {
     super(props);
     this.state = {
       favorites: [],
-      selectedGroup: null
+      selectedGroup: null,
+      currentUser: null
     };
+  }
+
+  componentWillMount() {
+    // update user status
+    firebase.auth().onAuthStateChanged(function(user) {
+      this.userAuthUpade(user);
+    }.bind(this));
+  }
+
+  userAuthUpade(userInfo) {
+    this.setState({currentUser: userInfo });
   }
 
   onSelectedGroup(selectedGroup) {
@@ -23,7 +36,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Header isConnected={false}/>
+        <Header currentUser={this.state.currentUser}/>
         <Categories />
         <Search groups={this.state.groups} />
         <Groups onSelectedGroup={this.onSelectedGroup.bind(this)}/>

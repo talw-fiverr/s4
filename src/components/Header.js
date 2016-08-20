@@ -20,7 +20,7 @@ export default class Header extends Component {
       <Popover id="popover-positioned-bottom"><Login /></Popover>
     );
 
-    const connectBtnClasses = `small-button ${this.props.isConnected ? 'hidden' : ''}`;
+    const connectBtnClasses = `small-button ${this.props.currentUser ? 'hidden' : ''}`;
 
     return (
       <div className="app-header">
@@ -29,7 +29,7 @@ export default class Header extends Component {
             <i className="siteLogo"></i>
           </Link>
         </div>
-        <SideMenu className="side-menu"  isConnected={this.props.isConnected}/>
+        <SideMenu className="side-menu"  isConnected={this.props.currentUser}/>
         <OverlayTrigger rootClose={true} trigger="click" placement="left" overlay={popoverElemet}>
          <a href="/" onClick={(e) => e.preventDefault()} className={connectBtnClasses}>התחבר</a>
         </OverlayTrigger>

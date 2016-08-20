@@ -7,7 +7,6 @@ var config = {
 
 firebase.initializeApp(config);
 
-var database = firebase.database();
 
 // - - - - - Progress bar logic - - - - -//
 // Get elements
@@ -163,7 +162,6 @@ function searchGroups(term) {
 
 
 // - - - - user manager code - - - - //
-var currentUser = null;
 
 function passwordReset(emailAddress) {
   var auth = firebase.auth();
@@ -277,13 +275,13 @@ function signOut() {
 };
 
 // watch the auth token.
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    currentUser = getUserInfo();
-    // User is signed in.
-  } else {
-    currentUser = null;
-    // No user is signed in.
-  }
-});
+// firebase.auth().onAuthStateChanged(function(user) {
+//   if (user) {
+//     currentUser = getUserInfo();
+//     // User is signed in.
+//   } else {
+//     currentUser = null;
+//     // No user is signed in.
+//   }
+// });
 // - - - - - - - - //

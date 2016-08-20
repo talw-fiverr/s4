@@ -2,16 +2,26 @@ require('../style/login.scss');
 
 import React, { Component } from 'react';
 import { Link }   from 'react-router';
+import { userLogin } from '../actions/index';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 export default class LoginPage extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      email: '',
+      password: ''
+    }
+
+    this.login = this.login.bind(this);
   }
 
   login(e) {
     debugger;
     e.preventDefault();
-    console.log('login pressed');
+    this.props.userLogin(this.state);
   }
 
   render() {
@@ -21,12 +31,12 @@ export default class LoginPage extends Component {
           <table>
             <tbody>
               <tr>
-                <td><label>שם משתמש:</label></td>
-                <td><input type="text"/></td>
+                <td><label>אימייל:</label></td>
+                <td><input type="text" onChange={(event) => this.setState({email: event.target.value})}/></td>
               </tr>
               <tr>
                 <td><label>סיסמא:</label></td>
-                <td><input type="password"/></td>
+                <td><input type="password" onChange={(event) => this.setState({password: event.target.value})}/></td>
               </tr>
               <tr>
                 <td></td>
@@ -41,3 +51,15 @@ export default class LoginPage extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    userAuth: state.userAuth
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ userLogin: userLogin }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

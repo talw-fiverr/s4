@@ -1,6 +1,7 @@
 // state is not the application state , but the state the reducer
 // is responsible for
 export default function(state = null, action) {
+
   console.log('search reducer');
   switch(action.type) {
     case 'SEARCH_GROUPS':

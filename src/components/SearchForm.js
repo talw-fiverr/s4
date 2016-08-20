@@ -1,8 +1,8 @@
 require('../style/searchForm.scss');
-import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { searchGroups } from '../actions/index';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
 class SearchForm extends Component {
 
@@ -10,50 +10,39 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchParams: {
-        category: 'all',
-        city: 'all',
-        group_level: 'all',
-        group_size: 'all',
-        group_age: 'all',
-        group_sex_type: 'all'
-      }
+      category: 'all',
+      city: 'all',
+      group_level: 'all',
+      group_size: 'all',
+      group_age: 'all',
+      group_sex_type: 'all'
     };
   }
 
-  onInputChange(event) {
-    this.setState({ category: event.target.value });
-    console.log(event);
-  }
-
-  searchGroups(e) {
+  formSubmit(e) {
+    debugger;
     e.preventDefault();
-    console.log('search');
-  }
-
-  onFormSubmit(e) {
-    e.preventDefault();
-    console.log('from submit');
+    this.props.searchGroups(this.state)
   }
 
   render() {
     return (
       <div>
-        <form className="app-search-form-inner" onSubmit={this.onFormSubmit}>
-          <select dir="rtl" className="category" onChange={(event) => this.setState({ category: event.target.value })}>
+        <form className="app-search-form-inner">
+          <select dir="rtl" name="category" onChange={(event) => this.setState({ category: event.target.value })}>
             <option value="" disabled selected>קטגוריה</option>
             <option value="running">ריצה</option>
             <option value="swimming">שחיה</option>
             <option value="walking">הליכה</option>
             <option value="all">הכל</option>
           </select>
-          <select dir="rtl" onChange={(event) => this.setState({ city: event.target.value })}>
+          <select dir="rtl" name="city" onChange={(event) => this.setState({ city: event.target.value })}>
             <option value="" disabled selected>עיר</option>
             <option value="pardes-hana">פרדס חנה</option>
             <option value="carcur">כרכור</option>
             <option value="netania">נתניה</option>
           </select>
-          <select dir="rtl" onChange={(event) => this.setState({ group_level: event.target.value })}>
+          <select dir="rtl" name="group_level" onChange={(event) => this.setState({ group_level: event.target.value })}>
             <option value="" disabled selected>סוג הקבוצה</option>
             <option value="personal">מותאם אישית</option>
             <option value="after-pregnency">אחרי הריון</option>
@@ -62,7 +51,7 @@ class SearchForm extends Component {
             <option value="compatition">תחרותי</option>
             <option value="all">הכל</option>
           </select>
-          <select dir="rtl" onChange={(event) => this.setState({ group_size: event.target.value })}>
+          <select dir="rtl" name="group_size" onChange={(event) => this.setState({ group_size: event.target.value })}>
             <option value="" disabled selected>גודל הקבוצה</option>
             <option value="1-5">1-5</option>
             <option value="5-10">5-10</option>
@@ -92,8 +81,7 @@ class SearchForm extends Component {
             <option value="girls">בנות</option>
             <option value="all">מעורב</option>
           </select>
-          <button type="submit" className="search-btn small-button"> חפש <i className="fa fa-search" aria-hidden="true"></i></button>
-          {/*<span onClick={() => this.props.searchGroups(this.state.searchParams)} className="search-btn small-button">חפש</span>*/}
+          <button type="button" onClick={e => this.formSubmit(e)} className="search-btn small-button"> חפש <i className="fa fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
     );

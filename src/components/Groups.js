@@ -11,7 +11,12 @@ export default class Groups extends Component {
 
   render() {
     if (!this.props.groups) {
-      return <div>No results</div>;
+      return (
+        <div className="no-data">
+
+          <p><i className="fa fa-meh-o" aria-hidden="true"></i> No results</p>
+        </div>
+    );
     }
 
     return (

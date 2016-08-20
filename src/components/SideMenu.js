@@ -4,14 +4,20 @@ import React, { Component } from 'react';
 import { slide as Menu } from 'react-burger-menu';
 import { Link } from 'react-router';
 
+import { userLogout } from '../actions/index';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 export default class SideMenu extends Component {
   constructor(props) {
     super(props);
+
+    this.logout = this.logout.bind(this);
   }
 
   logout(e) {
     e.preventDefault();
-    console.log('user logged out');
+    this.props.userLogout();
   }
 
   render() {
@@ -29,3 +35,16 @@ export default class SideMenu extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    userAuth: state.userAuth
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  // when searchGroups is called, result is passed to all reducers
+  return bindActionCreators({ userLogout: userLogout }, dispatch);
+}
+//
+export default connect(mapStateToProps, mapDispatchToProps)(SideMenu);
