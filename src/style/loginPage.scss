@@ -1,0 +1,97 @@
+@import "siteConfig";
+
+body {
+  background: transparent url('../images/opening_image.jpg') left top no-repeat;
+}
+
+.app-login {
+
+  .app-logo {
+    display: block;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background: $black;
+    text-align: center;
+    padding-top: 7px;
+
+    .siteLogo {
+      background: url('../images/sports-logo.png') no-repeat;
+      width: 200px;
+      height: 42px;
+      display: inline-block;
+    }
+  }
+
+  .register-form {
+    background-color: rgba(255,255,255,0.8);
+    width: 430px;
+    border: 1px solid $gray;
+    margin: 130px auto;
+    border-radius: 3px;
+    direction: rtl;
+    padding: 0;
+
+    .form-inner {
+      padding: 15px;
+
+      input, p {
+        margin-top: 15px;
+      }
+
+      p {
+        text-align: center;
+      }
+
+      h3 {
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+
+      table {
+        tr {
+          td {
+            padding-bottom: 10px;
+
+            &.btn-container {
+              position: relative;
+            }
+
+            label {
+              padding-left: 10px;
+              font-weight: 500;
+            }
+          }
+
+        }
+
+      }
+
+      .terms_and_services {
+        margin-top: 20px;
+        margin-bottom: 38px;
+      }
+
+      .login-btn {
+        background-color: $orange;
+        width: 100%;
+        margin-top: 15px;
+        font-size: 16px;
+        padding: 8px 18px;
+        border: 0;
+
+        &:hover {
+          background-color: $dark-orange;
+          -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+          -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+          box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+        }
+      }
+    }
+
+  }
+}
+
+.form-group {
+  margin: 0;
+}

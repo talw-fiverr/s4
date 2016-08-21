@@ -17,6 +17,7 @@ import TermsAndConditionsPage   from './pages/termsAndConditionsPage';
 import QaPage                   from './pages/QaPage';
 import GroupPage                from './pages/GroupPage';
 import RegisterPage             from './pages/RegisterPage';
+import LoginPage                from './pages/LoginPage';
 import CreateNewGroup           from './pages/CreateNewGroup';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
@@ -34,6 +35,7 @@ ReactDOM.render((
       <Route path="/qa"                   component={QaPage}></Route>
       <Route path="/group/*"              component={GroupPage}></Route>
       <Route path="/register"             component={RegisterPage}></Route>
+      <Route path="/login"                component={LoginPage}></Route>
       <Route path="/create-new-group"     component={CreateNewGroup}></Route>
     </Router>
   </Provider>
