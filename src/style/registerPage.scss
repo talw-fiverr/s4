@@ -1,57 +1,81 @@
 @import "siteConfig";
 
 .app-register {
-  background: url('../images/light-background.jpg');
+  background: transparent url('../images/opening_image.jpg') left top no-repeat;
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
   left: 0;
+  right: 0;
+
+  .app-logo {
+    display: block;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background: $black;
+    text-align: center;
+    padding-top: 7px;
+
+    .siteLogo {
+      background: url('../images/sports-logo.png') no-repeat;
+      width: 200px;
+      height: 42px;
+      display: inline-block;
+    }
+  }
 
   .register-form {
-    background-color: $white;
-    width: 500px;
-    height: 350px;
+    background-color: rgba(255,255,255,0.8);
+    width: 430px;
     border: 1px solid $gray;
-    margin: 40px auto;
+    margin: 130px auto;
     border-radius: 3px;
     direction: rtl;
-    padding: 20px;
+    padding: 0;
 
-    h3 {
-      margin-top: 10px;
-    }
+    .form-inner {
+      padding: 15px;
 
-    table {
-      tr {
-        td {
-          padding-bottom: 10px;
+      input {
+        margin-bottom: 20px;
+      }
 
-          &.btn-container {
-            position: relative;
-          }
+      .help-block {
+        margin: 0 0 3px 0;
+        display: inline-block;
+      }
 
-          label {
-            padding-left: 10px;
-            font-weight: 500;
-          }
+      p {
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .terms_and_services {
+        text-align: right;
+      }
+
+      .register-btn {
+        background-color: $orange;
+        width: 100%;
+        font-size: 16px;
+        padding: 8px 18px;
+        height: 35px;
+        border: 0;
+
+        &:hover {
+          background-color: $dark-orange;
+          -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+          -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+          box-shadow: 0 1px 3px rgba(0,0,0,0.25);
         }
+      }
 
-
+      .already-registered {
+        margin-top: 10px;  
       }
 
     }
 
-    .terms_and_services {
-      margin-top: 20px;
-      margin-bottom: 38px;
-    }
-
-    .register-btn {
-      background-color: $orange;
-      font-size: 16px;
-      padding: 8px 18px;
-      border: 0;
-    }
   }
 }

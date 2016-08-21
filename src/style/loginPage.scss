@@ -1,10 +1,12 @@
 @import "siteConfig";
 
-body {
-  background: transparent url('../images/opening_image.jpg') left top no-repeat;
-}
-
 .app-login {
+  background: transparent url('../images/opening_image.jpg') left top no-repeat;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   .app-logo {
     display: block;
@@ -66,12 +68,7 @@ body {
         }
 
       }
-
-      .terms_and_services {
-        margin-top: 20px;
-        margin-bottom: 38px;
-      }
-
+      
       .login-btn {
         background-color: $orange;
         width: 100%;

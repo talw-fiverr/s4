@@ -3,7 +3,6 @@ import Login from  '../components/Login';
 import SideMenu from  '../components/SideMenu';
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import { Button, OverlayTrigger, Popover } from 'react-bootstrap';
 
 export default class Header extends Component {
   constructor(props) {
@@ -16,11 +15,8 @@ export default class Header extends Component {
 
   render() {
 
-    const popoverElemet = (
-      <Popover id="popover-positioned-bottom"><Login /></Popover>
-    );
-
     const connectBtnClasses = `small-button ${this.props.currentUser ? 'hidden' : ''}`;
+    const registerBtnClasses = `register-btn ${this.props.currentUser ? 'hidden' : ''}`;
 
     return (
       <div className="app-header">
@@ -30,9 +26,8 @@ export default class Header extends Component {
           </Link>
         </div>
         <SideMenu className="side-menu"  isConnected={this.props.currentUser}/>
-        <OverlayTrigger rootClose={true} trigger="click" placement="left" overlay={popoverElemet}>
-         <a href="/" onClick={(e) => e.preventDefault()} className={connectBtnClasses}>התחבר</a>
-        </OverlayTrigger>
+         <a href="/login" className={connectBtnClasses}>התחבר</a>
+         <a href="/register" className={registerBtnClasses}>הרשמה</a>
       </div>
     );
   }

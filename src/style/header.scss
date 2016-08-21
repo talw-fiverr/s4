@@ -27,4 +27,15 @@
     float: right;
     margin: 17px;
   }
+
+  .register-btn {
+    color: $white;
+    float: right;
+    margin: 21px 3px 13px 17px;
+    transition: color 0.5s ease;
+
+    &:hover {
+      color: $green;
+    }
+  }
 }

@@ -14,14 +14,18 @@ export default function(state = null, action) {
           alert('כתובת המייל שהזנת אינה חוקית, אנה נסה שנית');
         }
       }).then(function(result) {
-          browserHistory.push('/');
+          if (result) {
+            browserHistory.push('/');
+          }
           return result;
       });
     break;
 
     case 'USER_LOGIN':
       firebase.auth().signInWithEmailAndPassword(action.payload.email, action.payload.password).then(function(result) {
-        browserHistory.push('/');
+        if (result) {
+          browserHistory.push('/');
+        }
         return result;
       }, function(error) {
         var errorCode = error.code;

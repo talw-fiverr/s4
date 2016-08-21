@@ -25,7 +25,9 @@ export default class RegisterPage extends Component {
         <form className="register-form">
           <FormGroup>
           <div className="app-logo">
-            <i className="siteLogo"></i>
+            <Link to={`/`}>
+              <i className="siteLogo"></i>
+            </Link>
           </div>
           <div className="form-inner">
             <FormControl
@@ -35,12 +37,12 @@ export default class RegisterPage extends Component {
               onChange={(event) => this.setState({email: event.target.value})}
             />
             <FormControl
-              type="text"
+              type="password"
               value={this.state.password}
               placeholder="הכנס סיסמא"
               onChange={(event) => this.setState({password: event.target.value})}
             />
-            <button type="button" onClick={this.register} className="login-btn small-button">הרשם</button>
+            <button type="button" onClick={this.register} className="login-btn small-button">התחבר</button>
             <p>עוד לא נרשמת?<Link to={`/register`}> הרשם עכשיו </Link></p>
           </div>
           </FormGroup>
