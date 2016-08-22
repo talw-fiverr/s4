@@ -1,5 +1,4 @@
 require('../style/header.scss');
-import Login from  '../components/Login';
 import SideMenu from  '../components/SideMenu';
 import React, { Component } from 'react';
 import { Link } from 'react-router';

@@ -14,7 +14,7 @@ export default class Groups extends Component {
       return (
         <div className="no-data">
 
-          <p><i className="fa fa-meh-o" aria-hidden="true"></i> No results</p>
+          <p><i className="fa fa-meh-o" aria-hidden="true"></i> אין תוצאות</p>
         </div>
     );
     }

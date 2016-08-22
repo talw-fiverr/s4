@@ -4,10 +4,14 @@ import React, { Component } from 'react';
 import { Link }   from 'react-router';
 import { FormGroup, FormControl } from 'react-bootstrap';
 
+import { userLogin } from '../actions/index';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
 import Header from      '../components/Header';
 import Footer from      '../components/Footer';
 
-export default class RegisterPage extends Component {
+export default class LoginPage extends Component {
   constructor(props) {
     super(props);
 
@@ -16,6 +20,14 @@ export default class RegisterPage extends Component {
       password: ''
     };
 
+    this.login = this.login.bind(this);
+
+  }
+
+  login(e) {
+    debugger;
+    e.preventDefault();
+    this.props.userLogin(this.state);
   }
 
 
@@ -42,7 +54,7 @@ export default class RegisterPage extends Component {
               placeholder="הכנס סיסמא"
               onChange={(event) => this.setState({password: event.target.value})}
             />
-            <button type="button" onClick={this.register} className="login-btn small-button">התחבר</button>
+            <button type="button" onClick={this.login} className="login-btn small-button">התחבר</button>
             <p>עוד לא נרשמת?<Link to={`/register`}> הרשם עכשיו </Link></p>
           </div>
           </FormGroup>
@@ -52,3 +64,15 @@ export default class RegisterPage extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    userAuth: state.userAuth
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ userLogin: userLogin }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

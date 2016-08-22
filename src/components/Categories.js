@@ -2,12 +2,6 @@ require('../style/categories.scss');
 import React, { Component } from 'react';
 import { Router, Route, Link } from 'react-router';
 
-var sportTypes =[{
-    key: 'running',
-    name: 'ריצה'
-  }
-];
-
 export default class Categories extends Component {
 
 
@@ -15,23 +9,19 @@ export default class Categories extends Component {
     return (
       <div className="app-categories">
         <ul className="link-list">
-          {/*{this.sportTypes.map(category => (
-            <li key={category.key}><Link to={`/categoryPage/${category.key}`}>{category.name}</Link></li>
-          ))}*/}
           <li><Link to={`/category/running`}>ריצה</Link></li>
-          <li><a href="!#">הליכה</a></li>
-          <li><a href="!#">שחיה</a></li>
-          <li><a href="!#">אופנים</a></li>
-          <li><a href="!#">כדורגל</a></li>
-          <li><a href="!#">כדורסל</a></li>
-          <li><a href="!#">טריאתלון</a></li>
-          <li><a href="!#">משקולות</a></li>
-          <li><a href="!#">גלישה</a></li>
-          <li><a href="!#">סאפ</a></li>
-          <li><a href="!#">טניס</a></li>
-          <li><a href="!#">אתלטיקה</a></li>
-          <li><a href="!#">אומנויות לחימה</a></li>
-          <li><a href="!#">אחר</a></li>
+          <li><Link to={`/category/swimming`}>שחיה</Link></li>
+          <li><Link to={`/category/bicycle`}>אופניים</Link></li>
+          <li><Link to={`/category/football`}>כדורגל</Link></li>
+          <li><Link to={`/category/basketball`}>כדורסל</Link></li>
+          <li><Link to={`/category/triatlon`}>תריאטלון</Link></li>
+          <li><Link to={`/category/trx`}>טירקס</Link></li>
+          <li><Link to={`/category/surf`}>גלישה</Link></li>
+          <li><Link to={`/category/sap`}>סאפ</Link></li>
+          <li><Link to={`/category/tennis`}>טניס</Link></li>
+          <li><Link to={`/category/gymnastics`}>אתלטיקה</Link></li>
+          <li><Link to={`/category/judo`}>גודו</Link></li>
+          <li><Link to={`/category/other`}>אחר</Link></li>
         </ul>
       </div>
     );
