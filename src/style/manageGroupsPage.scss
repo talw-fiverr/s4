@@ -1,0 +1,29 @@
+@import "siteConfig";
+
+.app-manage-group {
+  .add-new-group-btn {
+    color: $black;
+    font-size: 100px;
+    display: inline-block;
+    width: 150px;
+    height: 200px;
+    line-height: 186px;
+    text-align: center;
+    background: $gray;
+    margin: 15px;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: $strongGray;
+      color: $black;
+    }
+  }
+
+  i.add-btn {
+    display: inline-block;
+    width: 50px;
+    height: 60px;
+    background: url('../images/icons/add.svg') no-repeat;
+  }
+}

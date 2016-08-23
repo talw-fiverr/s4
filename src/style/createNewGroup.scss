@@ -1,0 +1,35 @@
+@import "siteConfig";
+
+
+.app-create-new-group {
+  .form-inner {
+    width: 80%;
+    background: $white;
+    margin: 40px auto;
+    border: 1px #cccccc solid;
+    border-radius: 5px;
+    direction: rtl;
+    padding: 25px;
+  }
+
+  h1,h2 {
+    padding:0;
+    margin:0;
+    margin-bottom: 15px;
+  }
+
+  input, select {
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 200px;
+  }
+
+  .help-block {
+    margin: 0 0 3px 0;
+    width: 200px;
+  }
+
+  .group-card-preview {
+    display: inline-block;
+  }
+}

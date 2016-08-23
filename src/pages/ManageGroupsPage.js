@@ -1,3 +1,5 @@
+require('../style/manageGroupsPage.scss');
+
 import React, { Component } from 'react';
 import { Link }   from 'react-router';
 
@@ -16,7 +18,12 @@ export default class ManageGroups extends Component {
         <Header />
         <Categories />
         <div className="app-manage-group">
-          this is the manage groups page
+          <Link className="add-new-group-btn" to={`/create-new-group`}>
+            <i className="add-btn"></i>
+          </Link>
+          <div className="my-groups">
+            container for the groups you created.
+          </div>
           <Link to={`/create-new-group`}>צור קבוצה חדשה</Link>
         </div>
         <Footer />
