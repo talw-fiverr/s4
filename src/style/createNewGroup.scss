@@ -10,6 +10,16 @@
     border-radius: 5px;
     direction: rtl;
     padding: 25px;
+
+    .right-side {
+      width: 400px;
+      display: inline-block;
+    }
+
+    .left-side {
+      display: inline-block;
+      vertical-align: top;
+    }
   }
 
   h1,h2 {
@@ -18,10 +28,10 @@
     margin-bottom: 15px;
   }
 
-  input, select {
+  input, select, textarea {
     margin-bottom: 20px;
     display: inline-block;
-    width: 200px;
+    width: 250px;
   }
 
   .help-block {

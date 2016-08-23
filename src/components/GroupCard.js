@@ -17,8 +17,8 @@ export default class GroupCard extends Component {
   }
 
   render() {
-    const headerClasses = `card-header ${this.props.groupInfo.sportType}`;
-    const badgesClasses = `sport ${this.props.groupInfo.sportType}`;
+    const headerClasses = `card-header ${this.props.groupInfo.category}`;
+    const badgesClasses = `sport ${this.props.groupInfo.category}`;
     return (
         <li className="app-groupCard" onClick={() => this.props.onSelectedGroup(this.props.groupInfo)}>
           <Link to={`/group/${this.props.groupInfo.id}`}>

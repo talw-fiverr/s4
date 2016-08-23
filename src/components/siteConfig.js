@@ -13,7 +13,7 @@ export const categories = [
   }
 ];
 
-export const groupType = [
+export const groupTypes = [
   {
     name: 'תחרותי',
     value: 'competision'
@@ -28,7 +28,7 @@ export const groupType = [
   }
   ];
 
-export const ageRange = [
+export const ageRanges = [
   {
     name: '10-12',
     value: '10-12'
